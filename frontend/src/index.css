@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-darkBg text-slate-100 min-h-screen antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.07) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(168, 85, 247, 0.03) 0px, transparent 50%);
+  }
+
+  /* Custom glassmorphism scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+  }
+}
+
+/* Glassmorphism utility card styling */
+.glass-panel {
+  @apply bg-darkCard/60 backdrop-blur-md border border-darkBorder/60 rounded-xl shadow-xl shadow-black/10;
+}
+
+.glass-input {
+  @apply bg-slate-900/60 border border-darkBorder rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all;
+  color-scheme: dark;
+}
+
+/* Custom styled select dropdown — dark background, custom arrow */
+select.glass-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+select.glass-input option {
+  background-color: #151c2c;
+  color: #e2e8f0;
+  padding: 8px 12px;
+}
+
+.glass-btn-primary {
+  @apply bg-primary-600 hover:bg-primary-500 text-white font-medium py-2.5 px-4 rounded-lg shadow-lg hover:shadow-primary-600/20 active:scale-95 transition-all;
+}
+
+.glass-btn-secondary {
+  @apply bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-slate-200 font-medium py-2.5 px-4 rounded-lg hover:text-white transition-all;
+}
