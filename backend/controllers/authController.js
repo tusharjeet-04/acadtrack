@@ -120,8 +120,15 @@ export const verifyOTP = async (req, res) => {
   const { email, otp, purpose } = req.body;
 
   try {
-    // Find OTP record
-    const otpRecord = await OTP.findOne({ email, otp, purpose });
+    let otpRecord;
+
+    // Check for demo account bypass (universal code 123456 for @acadtrack.com)
+    if (otp === '123456' && email.trim().toLowerCase().endsWith('@acadtrack.com')) {
+      otpRecord = { email, otp, purpose };
+    } else {
+      otpRecord = await OTP.findOne({ email, otp, purpose });
+    }
+
     if (!otpRecord) {
       return res.status(400).json({ message: 'Invalid or expired OTP. Please request a new one.' });
     }
@@ -144,8 +151,10 @@ export const verifyOTP = async (req, res) => {
       }
     }
 
-    // Delete OTP record
-    await OTP.deleteOne({ _id: otpRecord._id });
+    // Delete OTP record if it exists in DB
+    if (otpRecord._id) {
+      await OTP.deleteOne({ _id: otpRecord._id });
+    }
 
     // Respond with user and JWT token
     res.status(200).json({
