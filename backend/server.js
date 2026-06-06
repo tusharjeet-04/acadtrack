@@ -22,8 +22,12 @@ connectDB();
 const app = express();
 
 // Middlewares
+const frontendOrigin = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.trim().replace(/\/$/, '')
+  : '*';
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: frontendOrigin,
   credentials: true,
 }));
 app.use(express.json());
