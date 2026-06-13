@@ -214,7 +214,7 @@ const seedData = async () => {
       fCount++;
     }
 
-    const createdFaculty = await User.insertMany(facultyRecords);
+    const createdFaculty = await Promise.all(facultyRecords.map(f => User.create(f)));
     console.log(`👩‍🏫  ${createdFaculty.length} faculty members created.`);
 
     // ── 3. Students (100) ────────────────────────────────────────────────────
@@ -248,7 +248,7 @@ const seedData = async () => {
       sCount++;
     }
 
-    const createdStudents = await User.insertMany(studentRecords);
+    const createdStudents = await Promise.all(studentRecords.map(s => User.create(s)));
     console.log(`🎓  ${createdStudents.length} students created.`);
 
     // ── 4. Courses (22) ──────────────────────────────────────────────────────
