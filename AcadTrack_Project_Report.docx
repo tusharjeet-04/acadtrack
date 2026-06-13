@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>AcadTrack Project Report</title>
+  <!--[if gte mso 9]>
+  <xml>
+    <w:WordDocument>
+      <w:View>Print</w:View>
+      <w:Zoom>100</w:Zoom>
+      <w:DoNotOptimizeForBrowser/>
+    </w:WordDocument>
+  </xml>
+  <![endif]-->
+  <style>
+    @page {
+      size: 8.5in 11in;
+      margin: 1.0in 1.0in 1.0in 1.0in;
+      mso-header-margin: .5in;
+      mso-footer-margin: .5in;
+      mso-paper-source: 0;
+    }
+    div.Section1 {
+      page: Section1;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="Section1">
+    <h1 style="text-align:center; font-family:Arial,sans-serif; font-size:22pt; font-weight:bold; margin-top:2in; margin-bottom:0.5in; page-break-after:avoid;">PROJECT REPORT</h1>
+<h1 style="text-align:center; font-family:Arial,sans-serif; font-size:22pt; font-weight:bold; margin-top:2in; margin-bottom:0.5in; page-break-after:avoid;">ACADTRACK: STUDENT ACADEMIC JOURNEY TRACKER</h1>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<strong>A PROJECT REPORT</strong>  
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">*Submitted in partial fulfillment of the requirements for the degree of*</p>
+<strong>Bachelor of Technology</strong>  
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">*in*</p>
+<strong>Computer Science &amp; Engineering</strong>
+
+<strong>Submitted By:</strong>  
+<strong>Tusharjeet Rout</strong>  
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">*(Roll No: 2024-CSE-401)*</p>
+
+<strong>Under the Guidance of:</strong>  
+<strong>Dr. Sarah Jenkins</strong>  
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">*Associate Professor, Dept. of Computer Science*</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">![College Logo Placeholder](https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&amp;w=300&amp;auto=format&amp;fit=crop)</p>
+
+<strong>DEPARTMENT OF COMPUTER SCIENCE &amp; ENGINEERING</strong>  
+<strong>ACME INSTITUTE OF TECHNOLOGY &amp; SCIENCE</strong>  
+<strong>JUNE 2026</strong>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Candidate's Declaration</h2>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">I hereby declare that the work presented in this project report entitled <strong>"AcadTrack: Student Academic Journey Tracker"</strong> is an authentic record of my own research and development carried out under the supervision of <strong>Dr. Sarah Jenkins</strong>, Associate Professor, Department of Computer Science &amp; Engineering, Acme Institute of Technology &amp; Science.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The matter embodied in this report has not been submitted by me or any other person for the award of any other degree or diploma of this or any other University / Institute.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Date: June 14, 2026</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Place: Acme Campus, Townsville</p>
+
+<strong>Tusharjeet Rout</strong>  
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">*(Roll No: 2024-CSE-401)*</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Department of Computer Science &amp; Engineering</p>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Certificate</h2>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">This is to certify that the project report entitled <strong>"AcadTrack: Student Academic Journey Tracker"</strong> being submitted by <strong>Tusharjeet Rout</strong> *(Roll No: 2024-CSE-401)* in partial fulfillment of the requirements for the award of the degree of <strong>Bachelor of Technology in Computer Science &amp; Engineering</strong> to the Acme Institute of Technology &amp; Science, is a record of bonafide work carried out by him under my supervision and guidance.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The results embodied in this report have been verified and found to be satisfactory to the best of my knowledge.</p>
+
+<strong>Dr. Sarah Jenkins</strong>  
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">*Project Guide / Supervisor*</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Associate Professor, Dept. of CSE</p>
+
+<strong>Dr. Arthur Pendelton</strong>  
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">*Head of Department*</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Professor &amp; Head, Dept. of CSE</p>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Acknowledgement</h2>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">First and foremost, I wish to express my deepest gratitude to my project supervisor, <strong>Dr. Sarah Jenkins</strong>, for her invaluable guidance, encouragement, and constructive feedback throughout the course of this project. Her academic rigor and technical insights have been a constant source of inspiration.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">I am extremely grateful to <strong>Dr. Arthur Pendelton</strong>, Head of the Department of Computer Science &amp; Engineering, for providing the necessary facilities, computing resources, and supportive environment required to successfully carry out this work.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">I would also like to thank all the faculty members of the Computer Science department who directly or indirectly helped me during my studies and project development.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Lastly, I extend my heartfelt thanks to my parents and friends for their continuous emotional support, patience, and motivation during the challenging phases of system design, database debugging, and report documentation.</p>
+
+<strong>Tusharjeet Rout</strong>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Abstract</h2>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Academic institutions manage massive amounts of student information, including attendance registers, grading books, assignment submissions, class schedules, and announcement feeds. Frequently, these data systems are fragmented, making it difficult for students to monitor their overall progress or understand their placement eligibility.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">This project report describes the design and development of <strong>AcadTrack</strong>, a centralized web platform designed to solve this data fragmentation. AcadTrack is built on the <strong>MERN (MongoDB, Express.js, React.js, Node.js)</strong> architecture and provides secure, role-based interfaces for Students, Faculty, and Administrators.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">To protect sensitive grade and attendance records, AcadTrack implements a two-step authentication system. This system combines bcryptjs password hashing and JSON Web Tokens (JWT) for stateless sessions with One-Time Passwords (OTP) delivered securely via the Brevo HTTPS REST API.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Key features include:</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">1.  <strong>Placement Eligibility Evaluator:</strong> An engine that aggregates course grades, backlog data, and lecture attendance to evaluate placement readiness in real time.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">2.  <strong>Visual Timetable Scheduler:</strong> A scheduling dashboard that detects and prevents classroom booking conflicts.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">3.  <strong>Core Educational Modules:</strong> Features for managing attendance registers, hosting assignments, grading submissions, and distributing targeted announcements.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The system was evaluated using modular integration tests, role-based boundary validations, and conflict-detection scenarios, demonstrating high reliability and secure operations.</p>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Table of Contents</h2>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">1.  <strong>Chapter 1: Introduction</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  1.1 Context and Background</li>
+<li>  1.2 Problem Statement</li>
+<li>  1.3 Objective and Goals</li>
+<li>  1.4 Scope and Stakeholder Analysis</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">2.  <strong>Chapter 2: Literature Review &amp; Technology Stack</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  2.1 Evolution of Academic Software Systems</li>
+<li>  2.2 MERN Stack Architecture Overview</li>
+<li>  2.3 Mongoose ODM and NoSQL Advantages</li>
+<li>  2.4 Security and Verification Technologies</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">3.  <strong>Chapter 3: System Feasibility Analysis</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  3.1 Technical Feasibility</li>
+<li>  3.2 Operational Feasibility</li>
+<li>  3.3 Economic Feasibility</li>
+<li>  3.4 Legal and Social Feasibility</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">4.  <strong>Chapter 4: Software Requirements Specification (SRS)</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  4.1 Product Perspective and Constraints</li>
+<li>  4.2 Functional Requirements</li>
+<li>  4.3 Non-Functional Requirements</li>
+<li>  4.4 Hardware and Software Interfaces</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">5.  <strong>Chapter 5: System Design &amp; UML Modeling</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  5.1 High-Level Architecture</li>
+<li>  5.2 Data Flow Diagram (DFD Level 0 &amp; Level 1)</li>
+<li>  5.3 UML Use Case Modeling</li>
+<li>  5.4 UML Class Diagram</li>
+<li>  5.5 UML Sequence Diagrams</li>
+<li>  5.6 UML Activity Diagrams</li>
+<li>  5.7 Entity-Relationship Diagram (ERD) &amp; Database Relations</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">6.  <strong>Chapter 6: Database Schema Design &amp; Data Dictionary</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  6.1 MongoDB Modeling Principles</li>
+<li>  6.2 Detailed Data Dictionary Tables</li>
+<li>  6.3 Database Indexing &amp; Uniqueness Constraints</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">7.  <strong>Chapter 7: Modular Implementation &amp; Workflows</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  7.1 Two-Step Auth &amp; OTP Delivery Workflow</li>
+<li>  7.2 Student Progress Dashboard &amp; Placement Engine</li>
+<li>  7.3 Timetable &amp; Schedule Manager Conflict Checks</li>
+<li>  7.4 Faculty Attendance Registry &amp; Grading Workflows</li>
+<li>  7.5 Assignment Hosting and Notices Modules</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">8.  <strong>Chapter 8: Security &amp; Reliability Engineering</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  8.1 Role-Based Access Control (RBAC) Middleware</li>
+<li>  8.2 Hashing, Tokens, and Session Security</li>
+<li>  8.3 File Upload Restrictions &amp; Filter Middleware</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">9.  <strong>Chapter 9: Testing &amp; Quality Assurance</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  9.1 Quality Assurance Strategy</li>
+<li>  9.2 Modular and Integration Testing</li>
+<li>  9.3 Comprehensive Test Cases Matrix</li>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">10. <strong>Chapter 10: Future Scope &amp; Conclusion</strong></p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  10.1 Future Scope and Extensibility</li>
+<li>  10.2 Concluding Remarks</li>
+<li>  10.3 References and Bibliography</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 1: Introduction</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">1.1 Context and Background</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Higher education institutions manage complex academic environments containing hundreds of courses, dozens of departments, and thousands of students. Keeping track of student progress, marks, attendance, assignments, and announcements is crucial for institutional operations.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Historically, this information was recorded manually on paper ledger books or spreadsheets. Over time, these records transitioned to various independent software tools. Today, this fragmentation makes it difficult for administrators to monitor operations and prevents students from easily tracking their academic status.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">1.2 Problem Statement</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Traditional academic tracking systems suffer from several main issues:</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">1.  <strong>Data Fragmentation:</strong> Academic files, attendance sheets, and assignment submissions are kept in separate databases, making it difficult to generate a unified view of student progress.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">2.  <strong>Lack of Real-Time Analytics:</strong> Students are often unaware of their placement eligibility status until the final semester, leaving them unable to take corrective action early.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">3.  <strong>Vulnerability to Data Tampering:</strong> Systems without multi-step verification and role-based access control are vulnerable to unauthorized changes in grades or attendance records.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">4.  <strong>Timetable Booking Conflicts:</strong> Manual scheduling processes often lead to double-booked classrooms or instructors, disrupting daily operations.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">1.3 Objective and Goals</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The primary objective of this project is to develop <strong>AcadTrack</strong>, a unified platform that integrates student academic records, attendance sheets, assignment submissions, class schedules, and notices.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The project aims to achieve the following goals:</p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  Build a responsive web application that aggregates student performance metrics.</li>
+<li>  Implement a real-time placement eligibility evaluator based on GPA, attendance, and backlog data.</li>
+<li>  Create an automated timetable scheduler that detects and blocks booking conflicts.</li>
+<li>  Secure the platform using role-based access control, hashed passwords, and email-based OTP verification.</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">1.4 Scope and Stakeholder Analysis</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The system supports three user roles:</p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Students:</strong> Can view their GPA trends, course attendance, assignments, notices, and placement eligibility.</li>
+<li>  <strong>Faculty Members:</strong> Can take attendance, submit grades, post assignments, and publish notices.</li>
+<li>  <strong>Administrators:</strong> Can manage user profiles, assign faculty to courses, and configure global academic settings.</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 2: Literature Review &amp; Technology Stack</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">2.1 Evolution of Academic Software Systems</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Early academic management systems relied on mainframes to maintain student files, which required batch processing and offered limited user accessibility. The transition to client-server desktop applications improved access for administrative staff but remained unavailable to students and faculty.</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Modern web architectures have enabled real-time web applications. These platforms allow students, faculty, and administrators to interact on a single system, ensuring database consistency and immediate access to information.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">2.2 MERN Stack Architecture Overview</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AcadTrack uses the MERN stack to leverage JavaScript throughout the entire development process:</p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>React.js (Frontend):</strong> Builds a responsive, single-page application interface. State changes trigger targeted updates to components without reloading the page, which is useful for displaying dynamic charts.</li>
+<li>  <strong>Node.js &amp; Express.js (Backend):</strong> Node.js provides a non-blocking, event-driven runtime environment that handles concurrent API requests efficiently. Express.js simplifies routing, middleware integration, and request handling.</li>
+<li>  <strong>MongoDB (Database):</strong> A document-oriented NoSQL database that stores data in BSON format. This structure accommodates nested academic records, such as lists of graded courses, without requiring complex SQL joins.</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">2.3 Mongoose ODM and NoSQL Advantages</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Mongoose acts as an Object Document Mapper (ODM) for MongoDB, bridging the gap between raw document data and JavaScript objects. It enables developers to define strict schemas, default values, validators, and virtual properties, combining the flexibility of NoSQL with schema enforcement. This is useful for validating grade values, email formats, and role constraints on the database level.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">2.4 Security and Verification Technologies</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">To secure academic records, the platform implements several security standards:</p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>bcryptjs:</strong> Salts and hashes passwords before saving them, protecting credentials against reverse-engineering.</li>
+<li>  <strong>JSON Web Tokens (JWT):</strong> Generates encrypted session tokens that the client attaches to HTTP headers. This allows the backend to verify requests without keeping session states in memory.</li>
+<li>  <strong>Brevo HTTPS API:</strong> Used to send transaction emails for OTP verification, bypassing local SMTP port blocks to ensure reliable email delivery.</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 3: System Feasibility Analysis</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">3.1 Technical Feasibility</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The technologies used—React, Node.js, and MongoDB—are well-documented and widely supported. Mongoose provides schema validation, while Tailwind CSS simplifies building responsive user interfaces. Using the Brevo API ensures reliable delivery of OTP codes, making the technical implementation highly feasible.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">3.2 Operational Feasibility</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The platform is designed with role-specific views to simplify workflows. Administrators manage the user directory, faculty control attendance registers and assignment grading, and students track their academic metrics. This clear separation of concerns reduces usability hurdles and makes the system operationally feasible.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">3.3 Economic Feasibility</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The platform is built on open-source technologies, eliminating licensing fees. It can be deployed on standard cloud services and scaled as needed, which keeps initial hosting and maintenance costs low.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">3.4 Legal and Social Feasibility</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The system protects user data using password encryption, role-based access control, and email verification. It supports academic integrity by securing grading logs, aligning with student data privacy guidelines and making the system socially feasible.</p>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 4: Software Requirements Specification (SRS)</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">4.1 Product Perspective and Constraints</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AcadTrack operates as a secure web portal connecting to a Node.js backend. The client application runs in modern web browsers and requires an active internet connection to interact with the backend API and database.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">4.2 Functional Requirements</h3>
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.2.1 Authentication &amp; Profile Verification (FR-01)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Registration:</strong> Users must provide a name, email, password, role, department, and ID.</li>
+<li>  <strong>OTP Verification:</strong> The system must generate a 6-digit OTP code during registration or login, email it to the user, and verify it within 5 minutes.</li>
+<li>  <strong>Role Identification:</strong> Set roles to <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">student</code>, <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">faculty</code>, or <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">admin</code> to restrict access to specific features.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.2.2 Student Progress Analytics (FR-02)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Academic Summaries:</strong> Calculate overall CGPA, earned credits, attendance rates, and backlog counts.</li>
+<li>  <strong>Visual Charts:</strong> Render interactive charts showing SGPA and CGPA trends over semesters.</li>
+<li>  <strong>Placement Checker:</strong> Evaluate placement eligibility automatically based on the student's academic records.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.2.3 Timetable and Schedule Planner (FR-03)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Grid Display:</strong> Render a weekly calendar showing scheduled classes, timings, and classrooms.</li>
+<li>  <strong>Conflict Prevention:</strong> Check schedule entries to ensure no classroom is double-booked on the same day and time.</li>
+<li>  <strong>Custom Views:</strong> Limit student views to enrolled courses and faculty views to assigned teaching slots.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.2.4 Lecture Attendance Tracker (FR-04)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Marking:</strong> Allow faculty to record student attendance for specific course dates.</li>
+<li>  <strong>Daily Constraint:</strong> Restrict attendance entries to one registry per course per day.</li>
+<li>  <strong>Aggregation:</strong> Calculate subject-specific and overall attendance percentages for students.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.2.5 Assignment &amp; Grading Portal (FR-05)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Assignment Publishing:</strong> Allow faculty to post assignments with descriptions and reference documents.</li>
+<li>  <strong>PDF Submissions:</strong> Allow students to upload PDF files for assignments before the due date.</li>
+<li>  <strong>Grading interface:</strong> Provide a interface for faculty to grade submissions and leave feedback.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.2.6 Announcement Notice Board (FR-06)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Notices:</strong> Allow admins and faculty to write and publish notices.</li>
+<li>  <strong>Targeting:</strong> Filter notices based on the intended audience (e.g., student or faculty).</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">4.3 Non-Functional Requirements</h3>
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.3.1 Security &amp; Access Controls (NFR-01)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  Encrypt all passwords using <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">bcryptjs</code>.</li>
+<li>  Validate requests on the server using JWT signature checks.</li>
+<li>  Restrict API routes using role-based authorization rules.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.3.2 System Performance &amp; Latency (NFR-02)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  Ensure backend API response times remain under 200ms.</li>
+<li>  Optimize database queries using targeted indexes.</li>
+<li>  Load frontend components efficiently by caching assets on the client.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.3.3 Reliability &amp; Database Constraints (NFR-03)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  Enforce schema constraints and unique indexes to prevent duplicate entries.</li>
+<li>  Manage transaction status to ensure data consistency during updates.</li>
+</ul>
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">4.3.4 Usability &amp; Device Responsiveness (NFR-04)</h4>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  Implement a responsive web interface using Tailwind CSS.</li>
+<li>  Support modern web browsers (Chrome, Firefox, Safari, Edge).</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">4.4 Hardware and Software Interfaces</h3>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Software Interfaces:</strong> Connects to MongoDB via Mongoose and integrates with the Brevo API to send transactional emails.</li>
+<li>  <strong>User Interfaces:</strong> Features responsive HTML5 pages styled with Tailwind CSS, utilizing Lucide React for iconography.</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 5: System Design &amp; UML Modeling</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">5.1 High-Level Architecture</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AcadTrack follows a decoupled three-tier model where the client layer communicates with the server layer via JSON payloads over HTTPS:</p>
+
+<pre style="background:#f1f5f9; padding:12px; border:1px solid #cbd5e1; font-family:Consolas,monospace; font-size:10pt; white-space:pre-wrap;"><code>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">[React Client App] &lt;---HTTPS/JSON---&gt; [Express / Node Web Server] &lt;---Mongoose ODM---&gt; [MongoDB Cluster]</p>
+</code></pre>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">5.2 Data Flow Diagram (DFD Level 1)</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">This diagram shows the flow of information between users, system processes, and the database:</p>
+
+<div style="background:#fafafa; border:1px solid #e2e8f0; padding:10px; margin:10px 0; font-family:sans-serif; font-size:9pt; text-align:center; color:#475569;"><strong>[UML/Mermaid Diagram]</strong><pre style="text-align:left; font-family:Consolas,monospace; font-size:9.5pt;">
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">graph TD</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User([User])</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AuthProc[1.0 Session Auth &amp; OTP]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CourseProc[2.0 Course &amp; Enrollment]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">GradingProc[3.0 Grading &amp; GPA Calculations]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AttendProc[4.0 Attendance Tracker]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">SchedProc[5.0 Schedule Management]</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">DB[(MongoDB Database)]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Mailer[Brevo Mailer]</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User --&gt;|Login Credentials| AuthProc</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AuthProc --&gt;|Send OTP Code| Mailer</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AuthProc &lt;==&gt;|Verify &amp; Query Session| DB</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AuthProc --&gt;|JWT Token| User</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User --&gt;|Manage Course/User| CourseProc</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CourseProc &lt;==&gt;|Write Course Details| DB</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User --&gt;|Grade Marks| GradingProc</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">GradingProc &lt;==&gt;|Update AcademicRecord| DB</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User --&gt;|Submit Attendance Sheet| AttendProc</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AttendProc &lt;==&gt;|Write Attendance| DB</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User --&gt;|Create Timetable Slot| SchedProc</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">SchedProc &lt;==&gt;|Write Schedule Slot| DB</p>
+</pre></div>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">5.3 UML Use Case Modeling</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Use case modeling defines user interactions and system boundaries:</p>
+
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Administrator Cases:</strong> Admin users manage user profiles, allocate courses, and configure global system settings.</li>
+<li>  <strong>Faculty Cases:</strong> Faculty members mark attendance sheets, create assignments, grade student submissions, and write notices.</li>
+<li>  <strong>Student Cases:</strong> Students view their dashboard stats, check notice board announcements, and upload assignment files.</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">5.4 UML Class Diagram</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The class diagram shows the structure of the system's database entities and their associations:</p>
+
+<div style="background:#fafafa; border:1px solid #e2e8f0; padding:10px; margin:10px 0; font-family:sans-serif; font-size:9pt; text-align:center; color:#475569;"><strong>[UML/Mermaid Diagram]</strong><pre style="text-align:left; font-family:Consolas,monospace; font-size:9.5pt;">
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">classDiagram</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">class User {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId id</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string name</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string email</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string password</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string role</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string studentId</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string facultyId</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string department</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+number semester</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+matchPassword()</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">class Course {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId id</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string name</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string code</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+number credits</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string department</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId faculty</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+array studentsEnrolled</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">class AcademicRecord {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId id</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId student</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+number semester</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+array courses</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+number sgpa</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+number cgpa</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">class Attendance {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId id</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId course</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+date date</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+array records</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">class Assignment {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId id</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string title</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string description</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId course</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+date dueDate</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string fileUrl</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">class Submission {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId id</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId assignment</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId student</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string fileUrl</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+date submittedAt</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string grade</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string feedback</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string status</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">class Schedule {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId id</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+ObjectId course</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string dayOfWeek</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string startTime</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string endTime</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">+string classroom</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User "1" --&gt; "*" Course : teaches / enrolled</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User "1" --&gt; "*" AcademicRecord : owns</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Course "1" --&gt; "*" Attendance : logs</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Course "1" --&gt; "*" Assignment : has</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Assignment "1" --&gt; "*" Submission : receives</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User "1" --&gt; "*" Submission : submits</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Course "1" --&gt; "*" Schedule : runs_on</p>
+</pre></div>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">5.5 UML Sequence Diagram: Authentication &amp; OTP Verification</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The sequence of events during a login request and OTP verification:</p>
+
+<div style="background:#fafafa; border:1px solid #e2e8f0; padding:10px; margin:10px 0; font-family:sans-serif; font-size:9pt; text-align:center; color:#475569;"><strong>[UML/Mermaid Diagram]</strong><pre style="text-align:left; font-family:Consolas,monospace; font-size:9.5pt;">
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">sequenceDiagram</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">autonumber</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">actor User as User Agent</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">participant Client as React SPA Client</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">participant API as Express API Server</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">participant DB as MongoDB Cluster</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">participant Mailer as Brevo Mailer</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User-&gt;&gt;Client: Enter Credentials</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Client-&gt;&gt;API: POST /api/auth/login-request</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API-&gt;&gt;DB: Find User by Email</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">DB--&gt;&gt;API: User Record (Hashed Password)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API-&gt;&gt;API: Verify Password Hashing</p>
+    
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">alt Credentials Valid</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API-&gt;&gt;API: Generate 6-Digit OTP &amp; Save Session</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API-&gt;&gt;DB: Save OTP Document (TTL 5m)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API-&gt;&gt;Mailer: Send Transactional Email request</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Mailer--&gt;&gt;User: Deliver OTP Verification Email</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API--&gt;&gt;Client: Return OTP Sent Status (200)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Client--&gt;&gt;User: Display Verification Screen</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">else Credentials Invalid</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API--&gt;&gt;Client: Return 401 Unauthorized Error</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Client--&gt;&gt;User: Display Invalid Credentials Alert</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">end</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">User-&gt;&gt;Client: Input 6-Digit OTP</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Client-&gt;&gt;API: POST /api/auth/verify-otp (email, code)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API-&gt;&gt;DB: Find and Match OTP Document</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">DB--&gt;&gt;API: OTP Match Status</p>
+    
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">alt OTP Valid &amp; Not Expired</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API-&gt;&gt;API: Generate JSON Web Token (JWT)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API--&gt;&gt;Client: Return JWT Token &amp; Profile Info (200)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Client-&gt;&gt;Client: Cache JWT in LocalStorage</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Client--&gt;&gt;User: Redirect to Role Dashboard</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">else OTP Invalid / Expired</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">API--&gt;&gt;Client: Return 400 Bad Request</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Client--&gt;&gt;User: Display OTP Invalid Alert</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">end</p>
+</pre></div>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">5.6 UML Activity Diagram: Placement Eligibility Engine</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">This diagram illustrates the step-by-step logic used to calculate a student's placement eligibility:</p>
+
+<div style="background:#fafafa; border:1px solid #e2e8f0; padding:10px; margin:10px 0; font-family:sans-serif; font-size:9pt; text-align:center; color:#475569;"><strong>[UML/Mermaid Diagram]</strong><pre style="text-align:left; font-family:Consolas,monospace; font-size:9.5pt;">
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">flowchart TD</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Start([Start Evaluation]) --&gt; FetchData[Fetch Student Profile &amp; Academic History]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">FetchData --&gt; CheckCGPA{Is CGPA &gt;= 7.0?}</p>
+    
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CheckCGPA -- No --&gt; SetIneligible[Set Eligible = False]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CheckCGPA -- Yes --&gt; FetchAttendance[Calculate Overall Attendance Percentage]</p>
+    
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">FetchAttendance --&gt; CheckAtt{Is Attendance &gt;= 75%?}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CheckAtt -- No --&gt; SetIneligible</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CheckAtt -- Yes --&gt; FetchGrades[Scan Records for Grade F]</p>
+    
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">FetchGrades --&gt; CheckBacklogs{Any Backlogs Found?}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CheckBacklogs -- Yes --&gt; SetIneligible</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">CheckBacklogs -- No --&gt; SetEligible[Set Eligible = True]</p>
+    
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">SetIneligible --&gt; OutputResult[Return Status and Criteria Metrics]</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">SetEligible --&gt; OutputResult</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">OutputResult --&gt; End([End Evaluation])</p>
+</pre></div>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">5.7 Entity-Relationship Diagram (ERD) &amp; Database Relations</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">This diagram details entity relationships, primary keys, and foreign keys:</p>
+
+<div style="background:#fafafa; border:1px solid #e2e8f0; padding:10px; margin:10px 0; font-family:sans-serif; font-size:9pt; text-align:center; color:#475569;"><strong>[UML/Mermaid Diagram]</strong><pre style="text-align:left; font-family:Consolas,monospace; font-size:9.5pt;">
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">erDiagram</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">USER ||--o{ ACADEMIC_RECORD : owns</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">USER ||--o{ COURSE : teaches_or_enrolled</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">COURSE ||--o{ ATTENDANCE : tracks</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">COURSE ||--o{ ASSIGNMENT : holds</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ASSIGNMENT ||--o{ SUBMISSION : receives</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">USER ||--o{ SUBMISSION : uploads</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">COURSE ||--o{ SCHEDULE : schedules</p>
+
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">USER {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId id PK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string name</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string email</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string password</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string role</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string studentId</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string facultyId</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string department</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">number semester</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">COURSE {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId id PK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string name</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string code</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">number credits</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string department</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId faculty FK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ACADEMIC_RECORD {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId id PK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId student FK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">number semester</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">number sgpa</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">number cgpa</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ATTENDANCE {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId id PK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId course FK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">date date</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ASSIGNMENT {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId id PK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string title</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string description</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId course FK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">date dueDate</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string fileUrl</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">SUBMISSION {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId id PK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId assignment FK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId student FK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string fileUrl</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">date submittedAt</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string grade</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string feedback</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string status</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">SCHEDULE {</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId id PK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">ObjectId course FK</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string dayOfWeek</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string startTime</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string endTime</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">string classroom</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">}</p>
+</pre></div>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 6: Database Schema Design &amp; Data Dictionary</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">6.1 MongoDB Modeling Principles</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AcadTrack's database is modeled using Mongoose to balance flexibility and data validation. Relationships are maintained using ObjectIds rather than deeply nested structures, which keeps document sizes manageable and query structures clean.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">6.2 Detailed Data Dictionary Tables</h3>
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.1: Users Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">users</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores profile information for all system users:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique auto-generated identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">name</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Full name of the user</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">email</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">UK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Institutional email (unique, lowercase)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">password</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Hashed user password</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">role</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Enum: <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">['student', 'faculty', 'admin']</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">studentId</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">UK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Yes</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Student ID (unique, sparse index)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">facultyId</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">UK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Yes</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Faculty ID (unique, sparse index)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">department</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Academic department</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">semester</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Number</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Yes</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Enrolled semester (required for students)</td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.2: Academic Records Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">academicrecords</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores semester-wise grade information:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">student</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">User._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">semester</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Number</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Target semester (1 to 8)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">courses</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Array</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Subdocuments containing grade entries</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">courses.course</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">Course._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">courses.marksObtained</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Number</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Numeric score (0 to 100)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">courses.grade</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Enum: <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">['O', 'A+', 'A', 'B+', 'B', 'C', 'P', 'F']</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">courses.gradePoints</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Number</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">GPA value (0 to 10)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">sgpa</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Number</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Semester Grade Point Average</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">cgpa</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Number</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Cumulative Grade Point Average</td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.3: Attendance Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">attendances</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores daily course attendance logs:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">course</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">Course._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">date</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Date</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Date of the lecture</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">records</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Array</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">List of student attendance statuses</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">records.student</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">User._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">records.status</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Enum: <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">['Present', 'Absent']</code></td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.4: Schedule Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">schedules</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores timetable slot allocations:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">course</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">Course._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">dayOfWeek</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Enum: <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">['Monday', 'Tuesday', ..., 'Sunday']</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">startTime</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Lecture start time (HH:MM)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">endTime</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Lecture end time (HH:MM)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">classroom</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Assigned room identifier</td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.5: Courses Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">courses</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores details of the subjects:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">name</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Full subject title</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">code</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">UK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Standardized code (unique, uppercase)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">credits</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Number</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Credit weight (1 to 6)</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">department</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Host department</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">faculty</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">User._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">studentsEnrolled</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Array</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">List of student ObjectIds</td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.6: Assignments Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">assignments</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores course assignments posted by faculty:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">title</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Brief assignment title</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">description</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Yes</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Textual guidelines and instructions</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">course</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">Course._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">dueDate</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Date</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Deadline date</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">fileUrl</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Yes</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Path to uploaded task document</td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.7: Submissions Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">submissions</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores assignment submissions uploaded by students:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">assignment</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">Assignment._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">student</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">User._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">fileUrl</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Path to uploaded student document</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">submittedAt</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Date</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Timestamp of file submission</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">grade</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Yes</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Awarded mark or grade letter</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">feedback</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Yes</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Textual evaluation comments from faculty</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">status</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Enum: <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">['Submitted', 'Graded']</code></td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h4 style="font-family:Arial,sans-serif; font-size:11pt; font-weight:bold; margin-top:12pt; margin-bottom:4pt; page-break-after:avoid;">Table 6.8: Notice Board Collection (<code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">notices</code>)</h4>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Stores notifications published by administrators or faculty members:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Field Name</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Data Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Key Type</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Nullable</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Description / Constraints</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">_id</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">PK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Unique identifier</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">title</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Headline of the notice</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">content</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">String</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Detailed announcement body</td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">author</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">ObjectId</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">FK</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">References <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">User._id</code></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">targetRoles</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Array</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">-</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">No</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Enum list: <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">['student', 'faculty', 'admin']</code></td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">6.3 Database Indexing &amp; Uniqueness Constraints</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">1.  <strong>Users:</strong> Unique index on <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">email</code>. Sparse unique indexes on <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">studentId</code> and <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">facultyId</code> allow these fields to be optional for admins while enforcing uniqueness for other roles.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">2.  <strong>Academic Records:</strong> Compound unique index on <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">{ student: 1, semester: 1 }</code> prevents duplicate semester records for a student.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">3.  <strong>Attendance:</strong> Compound unique index on <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">{ course: 1, date: 1 }</code> restricts attendance entry to once per course per day.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">4.  <strong>Submissions:</strong> Compound unique index on <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">{ assignment: 1, student: 1 }</code> limits students to one file upload per assignment.</p>
+
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 7: Modular Implementation &amp; Workflows</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">7.1 Two-Step Auth &amp; OTP Delivery Workflow</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Authentication in AcadTrack follows a two-step process to secure user sessions:</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">1.  <strong>Request Login/Signup:</strong> The user submits their credentials. The server verifies the password hashing using <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">bcryptjs</code>.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">2.  <strong>OTP Generation:</strong> If the credentials are valid, the server generates a 6-digit OTP code and saves it to the database with a 5-minute expiration window.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">3.  <strong>Email Delivery:</strong> The backend connects to the Brevo API to send the OTP to the user's email address.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">4.  <strong>Verification:</strong> The user submits the OTP code. If the code is valid, the server generates a JWT to establish the user's session.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">7.2 Student Progress Dashboard &amp; Placement Engine</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The placement eligibility engine calculates student eligibility by analyzing records across multiple collections:</p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>GPA Verification:</strong> The engine reads the most recent semester record to retrieve the CGPA.</li>
+<li>  <strong>Backlog Scan:</strong> It checks all course grades in the student's history, flagging any courses with a grade of <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">F</code> as an active backlog.</li>
+<li>  <strong>Attendance Aggregation:</strong> The engine retrieves all attendance records for the student across their enrolled courses, calculating their overall attendance percentage.</li>
+<li>  <strong>Evaluation:</strong> If the student's CGPA is <span style="font-style:italic;">\ge</span> 7.0, their attendance is <span style="font-style:italic;">\ge</span> 75%, and they have 0 active backlogs, the system marks them as eligible for placement drives.</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">7.3 Timetable &amp; Schedule Manager Conflict Checks</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The scheduling module manages course timetables and prevents double-booking of classrooms:</p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Input Validation:</strong> The system checks that the start time is earlier than the end time.</li>
+<li>  <strong>Overlap Validation:</strong> When an administrator or faculty member schedules a class, the server queries existing schedule slots for the same day and room.</li>
+<li>  <strong>Validation Check:</strong> The system verifies that the new slot's times do not overlap with any existing bookings.</li>
+<li>  <strong>Resolution:</strong> If an overlap is detected, the server rejects the request with an error message, helping to coordinate room allocations.</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">7.4 Faculty Attendance Registry &amp; Grading Workflows</h3>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Attendance Registry:</strong> Faculty members can mark student attendance for specific course dates. The backend enforces unique date entries per course to prevent duplicate records.</li>
+<li>  <strong>Grading Workflow:</strong> Faculty submit grades for student assignments. The system calculates GPAs based on course credits and grade points, automatically updating the student's CGPA.</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">7.5 Assignment Hosting and Notices Modules</h3>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Assignment Hosting:</strong> Faculty can publish assignments with descriptions and reference documents. Students upload their submissions in PDF format, which are saved in the file system with unique paths.</li>
+<li>  <strong>Notice Board:</strong> Faculty and administrators can post announcements. These notices are targeted to specific roles (e.g., student or faculty) and are filtered on the client application accordingly.</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 8: Security &amp; Reliability Engineering</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">8.1 Role-Based Access Control (RBAC) Middleware</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The application secures API endpoints using custom middleware. After validating the JWT signature, the middleware checks that the user's role matches the authorized roles for that endpoint. For example, grading endpoints are restricted to <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">faculty</code>, user configuration tools are restricted to <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">admin</code>, and assignment submissions are restricted to <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">student</code>.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">8.2 Hashing, Tokens, and Session Security</h3>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Password Encryption:</strong> User passwords are encrypted using <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">bcryptjs</code> before storage, protecting credentials from unauthorized access.</li>
+<li>  <strong>Stateless Authentication:</strong> User sessions are managed using JWTs. Tokens include an expiration time of 12 hours, reducing the risk of session hijacking.</li>
+<li>  <strong>Database Constraints:</strong> The system uses MongoDB unique indexes to enforce data integrity at the database level.</li>
+</ul>
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">8.3 File Upload Restrictions &amp; Filter Middleware</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Assignment submissions are processed using <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">multer</code> with strict validation rules:</p>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Type Validation:</strong> Uploads are restricted to PDF documents.</li>
+<li>  <strong>Size Limit:</strong> File sizes are capped at 5 MB to prevent resource exhaustion on the server.</li>
+<li>  <strong>Filename Sanitization:</strong> Uploaded files are renamed using unique timestamps to avoid file collision and path traversal security vulnerabilities.</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 9: Testing &amp; Quality Assurance</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">9.1 Quality Assurance Strategy</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">Testing focused on verify core business logic, database constraints, and API access controls. This included checking calculation engines (GPA and attendance), scheduling validations, and route permissions.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">9.2 Modular and Integration Testing</h3>
+<ul style="margin-bottom:12pt; margin-left:20px;"><li>  <strong>Conflict Verification:</strong> Tested the scheduling validator to ensure overlapping time entries in the same classroom are correctly rejected.</li>
+<li>  <strong>Access Control Verification:</strong> Checked role restrictions to confirm that requests to admin or faculty endpoints without the required role result in access denial.</li>
+<li>  <strong>Academic Record Verification:</strong> Verified that the placement engine computes eligibility status flags correctly when student metrics cross the defined thresholds.</li>
+</ul>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">9.3 Comprehensive Test Cases Matrix</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The test matrix outlines the execution outcomes across functional modules:</p>
+
+<table style="border-collapse:collapse; width:100%; margin:12pt 0; border:1px solid #000;"><tr style="background-color:#f8fafc;"><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Test Case ID</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Feature Evaluated</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Input Scenario</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Expected Output</th><th style="border:1px solid #000; padding:6px; background-color:#f1f5f9; font-weight:bold; font-family:Arial,sans-serif; font-size:10.5pt; text-align:left;">Status</th></tr>
+
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-SEC-01</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">JWT Auth Guard</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Request without token header</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Return <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">401 Unauthorized</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-SEC-02</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Auth Role Control</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Student requests faculty <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">/grades</code> route</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Return <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">403 Forbidden</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-SCH-01</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Schedule Conflict</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Create overlapping schedule slot</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Return <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">400 Bad Request</code> room conflict</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-SCH-02</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Schedule Conflict</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Create slot starting after end time</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Return <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">400 Bad Request</code> timing error</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-ATT-01</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Attendance Registry</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Duplicate attendance entries for a course on one day</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Database rejects entry (Unique Index)</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-PLC-01</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Placement Eligibility</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">CGPA = 6.9, Att = 90%, Backlogs = 0</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Eligibility = <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">false</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-PLC-02</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Placement Eligibility</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">CGPA = 8.1, Att = 72%, Backlogs = 0</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Eligibility = <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">false</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+<tr><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>TC-PLC-03</strong></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Placement Eligibility</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">CGPA = 8.1, Att = 80%, Backlogs = 0</td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;">Eligibility = <code style="background:#f1f5f9; padding:2px 4px; font-family:Consolas,monospace; font-size:10pt; color:#4c1d95;">true</code></td><td style="border:1px solid #000; padding:6px; font-size:10pt; font-family:'Times New Roman',serif;"><strong>Passed</strong></td></tr>
+</table>
+<br style="page-break-before:always; clear:both;" /><hr style="border:0; border-top:1px solid #cbd5e1; margin:24px 0;" />
+
+<h2 style="font-family:Arial,sans-serif; font-size:16pt; font-weight:bold; margin-top:24pt; margin-bottom:12pt; border-bottom:2px solid #000; padding-bottom:4pt; page-break-after:avoid;">Chapter 10: Future Scope &amp; Conclusion</h2>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">10.1 Future Scope and Extensibility</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">AcadTrack is built on an extensible architecture that supports future feature integrations:</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">1.  <strong>Real-Time Notifications:</strong> Adding WebSocket support (via Socket.io) would allow the system to send instant alerts for timetable changes, announcements, and grade releases.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">2.  <strong>AI-Based Performance Analysis:</strong> Incorporating machine learning tools could help analyze historical student data to identify students who may need additional academic support.</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">3.  <strong>Integrated Recruiting Portal:</strong> Adding a recruitment module would allow companies to post job openings directly to students who meet their eligibility criteria.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">10.2 Concluding Remarks</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">The <strong>AcadTrack</strong> system centralizes academic records, class schedules, assignments, and announcements. By providing role-specific views and automated tools like the Placement Eligibility Evaluator, the application helps coordinate university operations, provides clear progress tracking for students, and reduces administrative overhead.</p>
+
+<h3 style="font-family:Arial,sans-serif; font-size:13pt; font-weight:bold; margin-top:18pt; margin-bottom:6pt; page-break-after:avoid;">10.3 References and Bibliography</h3>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">1.  <strong>MongoDB Documentation:</strong> NoSQL Schema Design and Index Optimization. [https://docs.mongodb.com/](https://docs.mongodb.com/)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">2.  <strong>ReactJS Community Guides:</strong> Component Architecture and Context-Based State Management. [https://react.dev/](https://react.dev/)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">3.  <strong>Express Framework Documentation:</strong> API Routing and Middleware Implementation. [https://expressjs.com/](https://expressjs.com/)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">4.  <strong>Internet Engineering Task Force (IETF):</strong> RFC 7519: JSON Web Tokens (JWT) Specification. [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519)</p>
+<p style="font-family:'Times New Roman',serif; font-size:12pt; text-align:justify; margin-bottom:12pt; line-height:1.5;">5.  <strong>Brevo REST API Developer Guides:</strong> Transactional Email Delivery. [https://developers.brevo.com/](https://developers.brevo.com/)</p>
+
+  </div>
+</body>
+</html>

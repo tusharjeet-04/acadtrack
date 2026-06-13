@@ -32,17 +32,20 @@ const DashboardLayout = ({ children }) => {
       { name: 'Dashboard', path: '/student', icon: LayoutDashboard },
       { name: 'Academics & Grades', path: '/student/academics', icon: GraduationCap },
       { name: 'Assignments', path: '/student/assignments', icon: FileSpreadsheet },
+      { name: 'Weekly Schedule', path: '/student/schedule', icon: Calendar },
     ],
     faculty: [
       { name: 'Dashboard', path: '/faculty', icon: LayoutDashboard },
       { name: 'Mark Attendance', path: '/faculty/attendance', icon: Calendar },
       { name: 'Enter Grades', path: '/faculty/grades', icon: GraduationCap },
       { name: 'Manage Assignments', path: '/faculty/assignments', icon: FileSpreadsheet },
+      { name: 'Weekly Schedule', path: '/faculty/schedule', icon: Calendar },
     ],
     admin: [
       { name: 'Dashboard', path: '/admin', icon: LayoutDashboard },
       { name: 'Manage Courses', path: '/admin/courses', icon: BookOpen },
       { name: 'Manage Users', path: '/admin/users', icon: Users },
+      { name: 'Weekly Schedule', path: '/admin/schedule', icon: Calendar },
     ],
   };
 
@@ -149,6 +152,7 @@ const DashboardLayout = ({ children }) => {
               {location.pathname.includes('assignments') && 'Assignments Panel'}
               {location.pathname.includes('courses') && 'Course Management'}
               {location.pathname.includes('users') && 'User Directory'}
+              {location.pathname.includes('schedule') && 'Weekly Class Timetable'}
               {location.pathname.split('/').length === 2 && 'Dashboard'}
             </h1>
           </div>

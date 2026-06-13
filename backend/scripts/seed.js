@@ -8,6 +8,7 @@ import Notice from '../models/Notice.js';
 import Assignment from '../models/Assignment.js';
 import Submission from '../models/Submission.js';
 import OTP from '../models/OTP.js';
+import Schedule from '../models/Schedule.js';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ const seedData = async () => {
     await Assignment.deleteMany({});
     await Submission.deleteMany({});
     await OTP.deleteMany({});
+    await Schedule.deleteMany({});
     console.log('Cleared all previous collections.');
 
     // 1. Create Users
@@ -251,6 +253,57 @@ const seedData = async () => {
     });
 
     console.log('Assignments and submissions created successfully.');
+
+    // 7. Seed Weekly Schedules
+    await Schedule.create({
+      course: course1._id,
+      dayOfWeek: 'Monday',
+      startTime: '09:00',
+      endTime: '10:30',
+      classroom: 'LHC-101',
+    });
+
+    await Schedule.create({
+      course: course2._id,
+      dayOfWeek: 'Monday',
+      startTime: '11:00',
+      endTime: '12:30',
+      classroom: 'LHC-102',
+    });
+
+    await Schedule.create({
+      course: course1._id,
+      dayOfWeek: 'Wednesday',
+      startTime: '09:00',
+      endTime: '10:30',
+      classroom: 'LHC-101',
+    });
+
+    await Schedule.create({
+      course: course3._id,
+      dayOfWeek: 'Wednesday',
+      startTime: '14:00',
+      endTime: '15:30',
+      classroom: 'Lab-3',
+    });
+
+    await Schedule.create({
+      course: course2._id,
+      dayOfWeek: 'Friday',
+      startTime: '11:00',
+      endTime: '12:30',
+      classroom: 'LHC-102',
+    });
+
+    await Schedule.create({
+      course: course3._id,
+      dayOfWeek: 'Friday',
+      startTime: '14:00',
+      endTime: '15:30',
+      classroom: 'Lab-3',
+    });
+
+    console.log('Schedule records created successfully.');
 
     console.log('\n=================================================');
     console.log('DATABASE SEEDED SUCCESSFULLY!');

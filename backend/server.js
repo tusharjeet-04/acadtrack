@@ -12,6 +12,7 @@ import attendanceRoutes from './routes/attendanceRoutes.js';
 import assignmentRoutes from './routes/assignmentRoutes.js';
 import dashboardRoutes from './routes/dashboardRoutes.js';
 import noticeRoutes from './routes/noticeRoutes.js';
+import scheduleRoutes from './routes/scheduleRoutes.js';
 
 // Load Env variables
 dotenv.config();
@@ -46,6 +47,7 @@ app.use('/api/attendance', attendanceRoutes);
 app.use('/api/assignments', assignmentRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/notices', noticeRoutes);
+app.use('/api/schedule', scheduleRoutes);
 
 // Base Route
 app.get('/', (req, res) => {

@@ -22,6 +22,7 @@ import FacultyAssignments from './pages/FacultyAssignments';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminCourses from './pages/AdminCourses';
 import AdminUsers from './pages/AdminUsers';
+import Schedule from './pages/Schedule';
 
 function App() {
   return (
@@ -54,6 +55,14 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={['student']}>
                 <StudentAssignments />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/student/schedule"
+            element={
+              <ProtectedRoute allowedRoles={['student']}>
+                <Schedule />
               </ProtectedRoute>
             }
           />
@@ -91,6 +100,14 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/faculty/schedule"
+            element={
+              <ProtectedRoute allowedRoles={['faculty']}>
+                <Schedule />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Admin Protected Routes */}
           <Route
@@ -114,6 +131,14 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={['admin']}>
                 <AdminUsers />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/schedule"
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <Schedule />
               </ProtectedRoute>
             }
           />
