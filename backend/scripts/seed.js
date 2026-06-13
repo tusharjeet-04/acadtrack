@@ -87,7 +87,7 @@ const seedData = async () => {
     // Admin
     const admin = await User.create({
       name: 'System Administrator',
-      email: 'admin@acadtrack.com',
+      email: 'tusharjeetrout04@gmail.com',
       password: 'admin123',
       role: 'admin',
       department: 'Administration',
@@ -776,7 +776,7 @@ const seedData = async () => {
     console.log('║              DATABASE SEEDED SUCCESSFULLY!                   ║');
     console.log('╠══════════════════════════════════════════════════════════════╣');
     console.log('║  ADMIN                                                       ║');
-    console.log('║    admin@acadtrack.com          (pw: admin123)               ║');
+    console.log('║    tusharjeetrout04@gmail.com   (pw: admin123)               ║');
     console.log('╠══════════════════════════════════════════════════════════════╣');
     console.log('║  FACULTY – Computer Science                                  ║');
     console.log('║    faculty@acadtrack.com        Dr. Sarah Jenkins (Sem 1–6)  ║');

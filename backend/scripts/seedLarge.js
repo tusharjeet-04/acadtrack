@@ -179,7 +179,7 @@ const seedData = async () => {
     // ── 1. Admin ─────────────────────────────────────────────────────────────
     const admin = await User.create({
       name: 'System Administrator',
-      email: 'admin@acadtrack.com',
+      email: 'tusharjeetrout04@gmail.com',
       password: 'admin123',
       role: 'admin',
       department: 'Administration',
@@ -187,7 +187,7 @@ const seedData = async () => {
     console.log('👤  Admin created.');
 
     // ── 2. Faculty (20) ──────────────────────────────────────────────────────
-    const usedEmails = new Set(['admin@acadtrack.com']);
+    const usedEmails = new Set(['tusharjeetrout04@gmail.com']);
     const usedFacultyIds = new Set();
 
     const facultyRecords = [];
@@ -441,7 +441,7 @@ const seedData = async () => {
     console.log('\n═══════════════════════════════════════════════════════');
     console.log('        🎉  DATABASE SEEDED SUCCESSFULLY!');
     console.log('═══════════════════════════════════════════════════════');
-    console.log(`  👤  Admin   : admin@acadtrack.com       (pw: admin123)`);
+    console.log(`  👤  Admin   : tusharjeetrout04@gmail.com       (pw: admin123)`);
     console.log(`  👩‍🏫  Faculty  : faculty1@acadtrack.com   (pw: faculty123)`);
     console.log(`               ... faculty2 through faculty5`);
     console.log(`  🎓  Students: student@acadtrack.com     (pw: student123)`);
