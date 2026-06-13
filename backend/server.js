@@ -54,6 +54,11 @@ app.get('/', (req, res) => {
   res.send('AcadTrack MERN Backend API is running...');
 });
 
+// Health check — used by Render uptime monitor & keep-alive pings
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;

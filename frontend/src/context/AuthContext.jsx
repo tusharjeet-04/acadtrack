@@ -3,6 +3,10 @@ import React, { createContext, useState, useEffect } from 'react';
 export const AuthContext = createContext();
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
+// Wake up Render backend on app load (free tier spins down after inactivity)
+fetch(`${BACKEND_URL}/health`).catch(() => {});
 
 export const AuthProvider = ({ children }) => {
   const [user,        setUser]        = useState(null);
