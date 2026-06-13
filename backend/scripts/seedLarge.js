@@ -192,7 +192,7 @@ const seedData = async () => {
 
     const facultyRecords = [];
     let fCount = 0;
-    while (fCount < 20) {
+    while (fCount < 5) {
       const fName = `${pick(facultyTitles)} ${firstNames[fCount % firstNames.length]} ${lastNames[fCount % lastNames.length]}`;
       const baseEmail = `faculty${fCount + 1}@acadtrack.com`;
       if (usedEmails.has(baseEmail)) { fCount++; continue; }
@@ -221,7 +221,7 @@ const seedData = async () => {
     const usedStudentIds = new Set();
     const studentRecords = [];
     let sCount = 0;
-    while (sCount < 100) {
+    while (sCount < 50) {
       const sName = `${firstNames[sCount % firstNames.length]} ${lastNames[sCount % lastNames.length]}`;
       const baseEmail = sCount === 0
         ? 'student@acadtrack.com'   // keep original demo login working
@@ -443,9 +443,9 @@ const seedData = async () => {
     console.log('═══════════════════════════════════════════════════════');
     console.log(`  👤  Admin   : admin@acadtrack.com       (pw: admin123)`);
     console.log(`  👩‍🏫  Faculty  : faculty1@acadtrack.com   (pw: faculty123)`);
-    console.log(`               ... faculty2 through faculty20`);
+    console.log(`               ... faculty2 through faculty5`);
     console.log(`  🎓  Students: student@acadtrack.com     (pw: student123)`);
-    console.log(`               ... student2 through student100`);
+    console.log(`               ... student2 through student50`);
     console.log(`  📚  Courses : ${createdCourses.length} courses across 5 departments`);
     console.log(`  📅  Attendance: 20 class sessions per course`);
     console.log(`  📊  Academic Records: seeded for all students`);
