@@ -53,64 +53,47 @@ const StudentDashboard = () => {
     );
   }
 
-  if (error) {
-    return (
-      <DashboardLayout>
-        <div className="p-4 bg-rose-950/20 border border-rose-900/30 text-rose-400 rounded-lg">
-          {error}
-        </div>
-      </DashboardLayout>
-    );
-  }
+  if (error) return (
+    <DashboardLayout>
+      <div className="alert-error">{error}</div>
+    </DashboardLayout>
+  );
 
   const { summary, eligibilityDetails, gpaTrend, subjectAttendance } = stats;
 
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Metric Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-primary-600/15 text-primary-400 rounded-xl">
-              <Award className="h-6 w-6" />
-            </div>
+        {/* Stat Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="stat-card">
+            <div className="stat-icon bg-primary-950/60"><Award className="h-5 w-5 text-primary-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Cumulative CGPA</p>
-              <h4 className="text-2xl font-bold text-slate-100">{summary.cgpa.toFixed(2)}</h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Cumulative CGPA</p>
+              <p className="text-2xl font-bold text-slate-100">{summary.cgpa.toFixed(2)}</p>
             </div>
-          </Card>
-
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-indigo-600/15 text-indigo-400 rounded-xl">
-              <Clock className="h-6 w-6" />
-            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon bg-indigo-950/60"><Clock className="h-5 w-5 text-indigo-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Overall Attendance</p>
-              <h4 className="text-2xl font-bold text-slate-100">{summary.overallAttendance}%</h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Attendance</p>
+              <p className="text-2xl font-bold text-slate-100">{summary.overallAttendance}%</p>
             </div>
-          </Card>
-
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-amber-600/15 text-amber-400 rounded-xl">
-              <AlertTriangle className="h-6 w-6" />
-            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon bg-amber-950/60"><AlertTriangle className="h-5 w-5 text-amber-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Active Backlogs</p>
-              <h4 className={`text-2xl font-bold ${summary.backlogCount > 0 ? 'text-amber-400' : 'text-slate-100'}`}>
-                {summary.backlogCount}
-              </h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Backlogs</p>
+              <p className={`text-2xl font-bold ${summary.backlogCount > 0 ? 'text-amber-400' : 'text-slate-100'}`}>{summary.backlogCount}</p>
             </div>
-          </Card>
-
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-emerald-600/15 text-emerald-400 rounded-xl">
-              <BookOpen className="h-6 w-6" />
-            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon bg-emerald-950/60"><BookOpen className="h-5 w-5 text-emerald-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Earned Credits</p>
-              <h4 className="text-2xl font-bold text-slate-100">{summary.totalCredits}</h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Credits Earned</p>
+              <p className="text-2xl font-bold text-slate-100">{summary.totalCredits}</p>
             </div>
-          </Card>
+          </div>
         </div>
 
         {/* Dynamic Placement Checker widget */}
@@ -145,7 +128,7 @@ const StudentDashboard = () => {
 
                 {/* Specific criteria checks */}
                 <div className="flex-1 space-y-4 w-full">
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-slate-900/40 border border-darkBorder/40">
+                  <div className="flex items-center justify-between p-3 rounded-xl bg-darkSurface border border-darkBorder/60">
                     <div className="flex items-center space-x-2">
                       {eligibilityDetails.criteria.cgpa.status ? (
                         <CheckCircle2 className="h-4 w-4 text-emerald-400" />
@@ -159,7 +142,7 @@ const StudentDashboard = () => {
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-slate-900/40 border border-darkBorder/40">
+                  <div className="flex items-center justify-between p-3 rounded-xl bg-darkSurface border border-darkBorder/60">
                     <div className="flex items-center space-x-2">
                       {eligibilityDetails.criteria.attendance.status ? (
                         <CheckCircle2 className="h-4 w-4 text-emerald-400" />
@@ -173,7 +156,7 @@ const StudentDashboard = () => {
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-slate-900/40 border border-darkBorder/40">
+                  <div className="flex items-center justify-between p-3 rounded-xl bg-darkSurface border border-darkBorder/60">
                     <div className="flex items-center space-x-2">
                       {eligibilityDetails.criteria.backlogs.status ? (
                         <CheckCircle2 className="h-4 w-4 text-emerald-400" />

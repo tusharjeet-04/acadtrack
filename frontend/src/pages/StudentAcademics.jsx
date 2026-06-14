@@ -91,25 +91,25 @@ const StudentAcademics = () => {
             {/* Semester GPA Stats */}
             {activeRecord && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <Card className="flex items-center space-x-4 border-l-4 border-l-primary-500">
-                  <div className="p-3 bg-primary-600/10 text-primary-400 rounded-xl">
-                    <GraduationCap className="h-6 w-6" />
+                <div className="stat-card">
+                  <div className="stat-icon bg-primary-950/60 text-primary-400">
+                    <GraduationCap className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Semester SGPA</p>
-                    <h4 className="text-2xl font-bold text-slate-100">{activeRecord.sgpa.toFixed(2)}</h4>
+                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Semester SGPA</p>
+                    <p className="text-2xl font-bold text-slate-100">{activeRecord.sgpa.toFixed(2)}</p>
                   </div>
-                </Card>
+                </div>
 
-                <Card className="flex items-center space-x-4 border-l-4 border-l-emerald-500">
-                  <div className="p-3 bg-emerald-600/10 text-emerald-400 rounded-xl">
-                    <Award className="h-6 w-6" />
+                <div className="stat-card">
+                  <div className="stat-icon bg-emerald-950/60 text-emerald-400">
+                    <Award className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Cumulative CGPA</p>
-                    <h4 className="text-2xl font-bold text-slate-100">{activeRecord.cgpa.toFixed(2)}</h4>
+                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Cumulative CGPA</p>
+                    <p className="text-2xl font-bold text-slate-100">{activeRecord.cgpa.toFixed(2)}</p>
                   </div>
-                </Card>
+                </div>
               </div>
             )}
 
@@ -120,44 +120,41 @@ const StudentAcademics = () => {
                 subtitle="Detailed breakdown of grade points and marks per registered subject"
               >
                 <div className="overflow-x-auto -mx-6">
-                  <table className="w-full text-left border-collapse">
+                  <table className="pro-table">
                     <thead>
-                      <tr className="border-b border-darkBorder/40 bg-slate-900/40 text-slate-400 text-xs font-semibold uppercase tracking-wider">
-                        <th className="py-3 px-6">Subject Code</th>
-                        <th className="py-3 px-6">Subject Title</th>
-                        <th className="py-3 px-6 text-center">Credits</th>
-                        <th className="py-3 px-6 text-center">Marks Obtain</th>
-                        <th className="py-3 px-6 text-center">Letter Grade</th>
-                        <th className="py-3 px-6 text-center">Grade Point</th>
+                      <tr>
+                        <th className="pl-6">Subject Code</th>
+                        <th>Subject Title</th>
+                        <th className="text-center">Credits</th>
+                        <th className="text-center">Marks Obtain</th>
+                        <th className="text-center">Letter Grade</th>
+                        <th className="text-center pr-6">Grade Point</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-darkBorder/30">
+                    <tbody>
                       {activeRecord.courses.map((entry) => (
-                        <tr
-                          key={entry.course?._id || Math.random().toString()}
-                          className="hover:bg-slate-900/20 text-sm text-slate-300 transition-colors"
-                        >
-                          <td className="py-4 px-6 font-semibold text-slate-200">
+                        <tr key={entry.course?._id || Math.random().toString()}>
+                          <td className="pl-6 font-semibold text-slate-200">
                             {entry.course?.code || 'N/A'}
                           </td>
-                          <td className="py-4 px-6">{entry.course?.name || 'Deleted Course'}</td>
-                          <td className="py-4 px-6 text-center font-medium">
+                          <td>{entry.course?.name || 'Deleted Course'}</td>
+                          <td className="text-center font-medium">
                             {entry.course?.credits || 3}
                           </td>
-                          <td className="py-4 px-6 text-center font-medium text-slate-200">
+                          <td className="text-center font-medium text-slate-200">
                             {entry.marksObtained} / 100
                           </td>
-                          <td className="py-4 px-6 text-center">
-                            <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-bold ${
-                              entry.grade === 'O' ? 'bg-purple-950/30 text-purple-400 border border-purple-500/20' :
-                              entry.grade === 'A+' || entry.grade === 'A' ? 'bg-emerald-950/30 text-emerald-400 border border-emerald-500/20' :
-                              entry.grade === 'F' ? 'bg-rose-950/30 text-rose-400 border border-rose-500/20 animate-pulse' :
-                              'bg-slate-800 text-slate-300 border border-slate-700/50'
+                          <td className="text-center">
+                            <span className={`badge ${
+                              entry.grade === 'O' ? 'badge-primary' :
+                              entry.grade === 'A+' || entry.grade === 'A' ? 'badge-success' :
+                              entry.grade === 'F' ? 'badge-danger animate-pulse' :
+                              'badge-neutral'
                             }`}>
                               {entry.grade}
                             </span>
                           </td>
-                          <td className="py-4 px-6 text-center font-bold text-slate-200">
+                          <td className="text-center font-bold text-slate-200 pr-6">
                             {entry.gradePoints}
                           </td>
                         </tr>

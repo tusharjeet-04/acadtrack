@@ -41,62 +41,45 @@ const FacultyDashboard = () => {
     );
   }
 
-  if (error) {
-    return (
-      <DashboardLayout>
-        <div className="p-4 bg-rose-950/20 border border-rose-900/30 text-rose-400 rounded-lg">
-          {error}
-        </div>
-      </DashboardLayout>
-    );
-  }
+  if (error) return (
+    <DashboardLayout>
+      <div className="alert-error">{error}</div>
+    </DashboardLayout>
+  );
 
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-primary-600/15 text-primary-400 rounded-xl">
-              <BookOpen className="h-6 w-6" />
-            </div>
+        {/* Stat Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="stat-card">
+            <div className="stat-icon bg-primary-950/60"><BookOpen className="h-5 w-5 text-primary-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Courses Taught</p>
-              <h4 className="text-2xl font-bold text-slate-100">{stats.coursesCount}</h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Courses Taught</p>
+              <p className="text-2xl font-bold text-slate-100">{stats.coursesCount}</p>
             </div>
-          </Card>
-
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-indigo-600/15 text-indigo-400 rounded-xl">
-              <Users className="h-6 w-6" />
-            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon bg-indigo-950/60"><Users className="h-5 w-5 text-indigo-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Total Students</p>
-              <h4 className="text-2xl font-bold text-slate-100">{stats.studentsCount}</h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Total Students</p>
+              <p className="text-2xl font-bold text-slate-100">{stats.studentsCount}</p>
             </div>
-          </Card>
-
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-emerald-600/15 text-emerald-400 rounded-xl">
-              <FileSpreadsheet className="h-6 w-6" />
-            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon bg-emerald-950/60"><FileSpreadsheet className="h-5 w-5 text-emerald-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Assignments Created</p>
-              <h4 className="text-2xl font-bold text-slate-100">{stats.assignmentsCount}</h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Assignments</p>
+              <p className="text-2xl font-bold text-slate-100">{stats.assignmentsCount}</p>
             </div>
-          </Card>
-
-          <Card className="flex items-center space-x-4">
-            <div className="p-3.5 bg-rose-600/15 text-rose-400 rounded-xl">
-              <CheckSquare className="h-6 w-6" />
-            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon bg-rose-950/60"><CheckSquare className="h-5 w-5 text-rose-400" /></div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Pending Grading</p>
-              <h4 className={`text-2xl font-bold ${stats.pendingGradingCount > 0 ? 'text-rose-400' : 'text-slate-100'}`}>
-                {stats.pendingGradingCount}
-              </h4>
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Pending Grading</p>
+              <p className={`text-2xl font-bold ${stats.pendingGradingCount > 0 ? 'text-rose-400' : 'text-slate-100'}`}>{stats.pendingGradingCount}</p>
             </div>
-          </Card>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

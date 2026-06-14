@@ -115,19 +115,18 @@ const EditUserModal = ({ user, onClose, onSave }) => {
           )}
 
           {error && (
-            <div className="flex items-center space-x-2 p-3 rounded-lg bg-rose-950/20 border border-rose-900/30 text-rose-400 text-xs">
-              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+            <div className="alert-error text-xs mb-4">
               <span>{error}</span>
             </div>
           )}
 
-          <div className="flex space-x-3 pt-1">
-            <button type="button" onClick={onClose} className="flex-1 py-2.5 rounded-xl border border-slate-700 text-slate-400 hover:text-slate-200 hover:border-slate-500 text-sm font-semibold transition-all">
+          <div className="flex gap-3 pt-1">
+            <button type="button" onClick={onClose} className="glass-btn-secondary flex-1 py-2 text-sm">
               Cancel
             </button>
-            <button type="submit" disabled={saving} className="flex-1 glass-btn-primary py-2.5 text-sm font-semibold disabled:opacity-50 flex items-center justify-center space-x-2">
+            <button type="submit" disabled={saving} className="glass-btn-primary flex-1 py-2 text-sm">
               <Save className="h-4 w-4" />
-              <span>{saving ? 'Saving...' : 'Save Changes'}</span>
+              <span>{saving ? 'Saving…' : 'Save Changes'}</span>
             </button>
           </div>
         </form>
@@ -168,19 +167,16 @@ const DeleteModal = ({ user, onClose, onConfirm }) => {
           </div>
 
           {error && (
-            <div className="flex items-center space-x-2 p-3 rounded-lg bg-rose-950/20 border border-rose-900/30 text-rose-400 text-xs text-left">
-              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+            <div className="alert-error text-xs mb-2">
               <span>{error}</span>
             </div>
           )}
 
-          <div className="flex space-x-3">
-            <button onClick={onClose} className="flex-1 py-2.5 rounded-xl border border-slate-700 text-slate-400 hover:text-slate-200 hover:border-slate-500 text-sm font-semibold transition-all">
-              Cancel
-            </button>
-            <button onClick={handleDelete} disabled={deleting} className="flex-1 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-sm font-semibold disabled:opacity-50 transition-all flex items-center justify-center space-x-1.5">
+          <div className="flex gap-3">
+            <button onClick={onClose} className="glass-btn-secondary flex-1 py-2 text-sm">Cancel</button>
+            <button onClick={handleDelete} disabled={deleting} className="glass-btn-danger flex-1 py-2 text-sm">
               <Trash2 className="h-4 w-4" />
-              <span>{deleting ? 'Deleting...' : 'Delete'}</span>
+              <span>{deleting ? 'Deleting…' : 'Delete'}</span>
             </button>
           </div>
         </div>
@@ -276,7 +272,7 @@ const AdminUsers = () => {
       <div className="space-y-6">
         {/* Success toast */}
         {actionMsg && (
-          <div className="flex items-center space-x-3 p-4 rounded-xl bg-emerald-950/20 border border-emerald-900/30 text-emerald-400 text-sm font-medium">
+          <div className="alert-success text-sm">
             <span>{actionMsg}</span>
           </div>
         )}
@@ -305,76 +301,75 @@ const AdminUsers = () => {
         </Card>
 
         {/* Directory Listing Table */}
-        <Card title="System Registered Users" subtitle={`Found ${filteredUsers.length} active listings`}>
+        <Card title="System Registered Users" subtitle={`${filteredUsers.length} users found`}>
           {filteredUsers.length === 0 ? (
-            <div className="text-center py-12 text-slate-400">
-              <AlertCircle className="h-10 w-10 mx-auto text-slate-600 mb-2" />
-              <p className="text-sm">No accounts matching the filters were found.</p>
+            <div className="text-center py-14">
+              <AlertCircle className="h-8 w-8 mx-auto text-slate-700 mb-3" />
+              <p className="text-sm text-slate-500">No accounts matching the filters.</p>
             </div>
           ) : (
             <div className="overflow-x-auto -mx-6">
-              <table className="w-full text-left border-collapse">
+              <table className="pro-table">
                 <thead>
-                  <tr className="border-b border-darkBorder/40 bg-slate-900/40 text-slate-400 text-xs font-semibold uppercase tracking-wider">
-                    <th className="py-3 px-6">Account Name</th>
-                    <th className="py-3 px-6">Gmail Address</th>
-                    <th className="py-3 px-6 text-center">System Role</th>
-                    <th className="py-3 px-6 text-center">Specific ID</th>
-                    <th className="py-3 px-6">Department</th>
-                    <th className="py-3 px-6 text-center">Actions</th>
+                  <tr>
+                    <th className="px-6">Name</th>
+                    <th className="px-6">Email</th>
+                    <th className="px-6 text-center">Role</th>
+                    <th className="px-6 text-center">ID</th>
+                    <th className="px-6">Department</th>
+                    <th className="px-6 text-center">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-darkBorder/30">
+                <tbody>
                   {filteredUsers.map((user) => (
-                    <tr key={user._id} className="hover:bg-slate-800/20 text-sm text-slate-300 transition-colors group">
-                      <td className="py-3.5 px-6">
-                        <div className="flex items-center space-x-3">
-                          <div className="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-slate-200 border border-darkBorder flex-shrink-0">
+                    <tr key={user._id}>
+                      <td className="px-6">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-primary-800/60 to-primary-950/60 border border-primary-700/30 flex items-center justify-center font-bold text-primary-300 text-xs flex-shrink-0">
                             {user.name.charAt(0).toUpperCase()}
                           </div>
                           <div>
-                            <div className="font-semibold text-slate-200">{user.name}</div>
+                            <div className="font-semibold text-slate-200 text-sm">{user.name}</div>
                             {user.role === 'student' && user.semester && (
-                              <div className="text-[10px] text-slate-500">Semester {user.semester}</div>
+                              <div className="text-[10px] text-slate-600">Semester {user.semester}</div>
                             )}
                           </div>
                         </div>
                       </td>
-                      <td className="py-3.5 px-6">
-                        <div className="flex items-center space-x-1.5 text-xs text-slate-400">
-                          <Mail className="h-3.5 w-3.5 text-slate-500" />
-                          <span>{user.email}</span>
+                      <td className="px-6">
+                        <div className="flex items-center gap-1.5">
+                          <Mail className="h-3.5 w-3.5 text-slate-600 flex-shrink-0" />
+                          <span className="text-xs text-slate-400 truncate max-w-[180px]">{user.email}</span>
                         </div>
                       </td>
-                      <td className="py-3.5 px-6 text-center">
-                        <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-bold border ${
-                          user.role === 'admin'   ? 'bg-rose-950/20 text-rose-400 border-rose-900/20' :
-                          user.role === 'faculty' ? 'bg-indigo-950/20 text-indigo-400 border-indigo-900/20' :
-                                                    'bg-emerald-950/20 text-emerald-400 border-emerald-900/20'
-                        }`}>
-                          {user.role}
+                      <td className="px-6 text-center">
+                        <span className={`badge ${
+                          user.role === 'admin'   ? 'badge-danger' :
+                          user.role === 'faculty' ? 'badge-primary' :
+                                                    'badge-success'
+                        }`}>{user.role}</span>
+                      </td>
+                      <td className="px-6 text-center">
+                        <span className="font-mono text-xs text-slate-400">
+                          {user.role === 'student' ? user.studentId : user.role === 'faculty' ? user.facultyId : '—'}
                         </span>
                       </td>
-                      <td className="py-3.5 px-6 text-center font-semibold text-slate-200">
-                        {user.role === 'student' ? user.studentId : user.role === 'faculty' ? user.facultyId : '—'}
-                      </td>
-                      <td className="py-3.5 px-6 text-slate-400 text-xs">
+                      <td className="px-6 text-xs text-slate-500">
                         {user.department || 'General'}
                       </td>
-                      {/* Actions */}
-                      <td className="py-3.5 px-6 text-center">
-                        <div className="flex items-center justify-center space-x-2">
+                      <td className="px-6 text-center">
+                        <div className="flex items-center justify-center gap-1.5">
                           <button
                             onClick={() => setEditingUser(user)}
                             title="Edit user"
-                            className="p-1.5 rounded-lg bg-indigo-950/20 border border-indigo-900/30 text-indigo-400 hover:bg-indigo-900/40 hover:text-indigo-300 transition-all"
+                            className="h-7 w-7 rounded-lg bg-primary-950/50 border border-primary-800/30 text-primary-400 hover:bg-primary-900/50 hover:border-primary-700/40 transition-all flex items-center justify-center"
                           >
                             <Pencil className="h-3.5 w-3.5" />
                           </button>
                           <button
                             onClick={() => setDeletingUser(user)}
                             title="Delete user"
-                            className="p-1.5 rounded-lg bg-rose-950/20 border border-rose-900/30 text-rose-400 hover:bg-rose-900/40 hover:text-rose-300 transition-all"
+                            className="h-7 w-7 rounded-lg bg-rose-950/50 border border-rose-900/30 text-rose-400 hover:bg-rose-900/50 hover:border-rose-800/40 transition-all flex items-center justify-center"
                           >
                             <Trash2 className="h-3.5 w-3.5" />
                           </button>

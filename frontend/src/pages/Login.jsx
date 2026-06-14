@@ -1,31 +1,28 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { Mail, Lock, ShieldCheck, ArrowRight, ArrowLeft, GraduationCap } from 'lucide-react';
+import { Mail, Lock, ShieldCheck, ArrowRight, ArrowLeft, GraduationCap, Eye, EyeOff } from 'lucide-react';
 
 const Login = () => {
   const { loginRequest, verifyOTP } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Authentication states
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [otp, setOtp] = useState('');
-  const [step, setStep] = useState(1); // 1 = Credentials, 2 = OTP Verification
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [email,       setEmail]       = useState('');
+  const [password,    setPassword]    = useState('');
+  const [showPass,    setShowPass]    = useState(false);
+  const [otp,         setOtp]         = useState('');
+  const [step,        setStep]        = useState(1);
+  const [loading,     setLoading]     = useState(false);
+  const [error,       setError]       = useState('');
   const [infoMessage, setInfoMessage] = useState('');
 
   const handleCredentialsSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setInfoMessage('');
-    setLoading(true);
-
+    setError(''); setInfoMessage(''); setLoading(true);
     try {
       const result = await loginRequest(email, password);
       if (result.otpSent) {
-        setInfoMessage(`A 6-digit OTP has been sent to ${email}. Please check your inbox.`);
+        setInfoMessage(`OTP sent to ${email}. Check your inbox.`);
         setStep(2);
       }
     } catch (err) {
@@ -35,195 +32,190 @@ const Login = () => {
     }
   };
 
-
-
   const handleOTPSubmit = async (e) => {
     e.preventDefault();
-    if (otp.length !== 6) {
-      setError('Please enter a valid 6-digit OTP code.');
-      return;
-    }
-
-    setError('');
-    setLoading(true);
-
+    if (otp.length !== 6) { setError('Enter a valid 6-digit OTP.'); return; }
+    setError(''); setLoading(true);
     try {
-      const loggedInUser = await verifyOTP(otp);
-      // Redirect according to role
-      if (loggedInUser.role === 'admin') {
-        navigate('/admin');
-      } else if (loggedInUser.role === 'faculty') {
-        navigate('/faculty');
-      } else {
-        navigate('/student');
-      }
+      const u = await verifyOTP(otp);
+      if (u.role === 'admin')        navigate('/admin');
+      else if (u.role === 'faculty') navigate('/faculty');
+      else                           navigate('/student');
     } catch (err) {
-      setError(err.message || 'Incorrect OTP code. Please try again.');
+      setError(err.message || 'Incorrect OTP. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-darkBg flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Decorative background blurs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div className="min-h-screen bg-darkBg flex">
+      {/* ── Left decorative panel ── */}
+      <div className="hidden lg:flex lg:w-[42%] xl:w-[45%] flex-col justify-between p-12 relative overflow-hidden bg-darkCard border-r border-darkBorder/60">
+        {/* Grid overlay */}
+        <div className="absolute inset-0 opacity-30"
+          style={{backgroundImage:"linear-gradient(rgba(99,102,241,0.05) 1px, transparent 1px),linear-gradient(90deg,rgba(99,102,241,0.05) 1px,transparent 1px)", backgroundSize:"48px 48px"}} />
+        {/* Glow blobs */}
+        <div className="absolute top-1/4 -left-24 w-80 h-80 bg-primary-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-indigo-600/8 rounded-full blur-3xl" />
 
-      <div className="w-full max-w-md z-10">
-        {/* Brand */}
-        <div className="flex flex-col items-center mb-8">
-          <div className="p-3 bg-primary-600/15 border border-primary-500/20 rounded-2xl mb-3 shadow-lg shadow-primary-500/5">
-            <GraduationCap className="h-10 w-10 text-primary-500" />
+        <div className="relative z-10">
+          <div className="flex items-center gap-3 mb-16">
+            <div className="h-10 w-10 rounded-xl bg-primary-600/20 border border-primary-500/30 flex items-center justify-center">
+              <GraduationCap className="h-5.5 w-5.5 text-primary-400" style={{width:'22px',height:'22px'}} />
+            </div>
+            <span className="text-xl font-bold text-gradient-primary">AcadTrack</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-primary-400 bg-clip-text text-transparent">
-            AcadTrack
-          </h2>
-          <p className="text-slate-400 text-sm mt-1">Student Academic Journey Tracker</p>
+
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold text-white leading-tight">
+              Your academic<br />journey, organised.
+            </h2>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+              A unified platform for students, faculty, and administrators — 
+              grades, attendance, schedules, and more.
+            </p>
+          </div>
         </div>
 
-        {/* Card */}
-        <div className="glass-panel p-8 bg-darkCard/50 backdrop-blur-xl border border-darkBorder/80">
-          <h3 className="text-xl font-bold text-slate-100 mb-2">
-            {step === 1 ? 'Welcome Back' : 'Security Verification'}
+        <div className="relative z-10 grid grid-cols-3 gap-3">
+          {[
+            { label: 'Students',   value: '50+' },
+            { label: 'Faculty',    value: '10+' },
+            { label: 'Courses',    value: '22+'  },
+          ].map(s => (
+            <div key={s.label} className="bg-darkSurface/80 border border-darkBorder/60 rounded-xl p-4 text-center">
+              <p className="text-xl font-bold text-primary-400">{s.value}</p>
+              <p className="text-[11px] text-slate-500 mt-0.5">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Right: Auth Form ── */}
+      <div className="flex-1 flex items-center justify-center p-6 relative">
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-600/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="w-full max-w-sm relative z-10">
+          {/* Mobile brand */}
+          <div className="flex items-center gap-2 mb-8 lg:hidden">
+            <div className="h-8 w-8 rounded-lg bg-primary-600/20 border border-primary-500/30 flex items-center justify-center">
+              <GraduationCap className="h-4 w-4 text-primary-400" />
+            </div>
+            <span className="text-lg font-bold text-gradient-primary">AcadTrack</span>
+          </div>
+
+          {/* Step indicator */}
+          <div className="flex items-center gap-2 mb-6">
+            <div className={`h-1 flex-1 rounded-full transition-all duration-500 ${step >= 1 ? 'bg-primary-500' : 'bg-darkBorder'}`} />
+            <div className={`h-1 flex-1 rounded-full transition-all duration-500 ${step >= 2 ? 'bg-primary-500' : 'bg-darkBorder'}`} />
+          </div>
+
+          <h3 className="text-2xl font-bold text-white mb-1">
+            {step === 1 ? 'Sign in' : 'Verify your identity'}
           </h3>
-          <p className="text-slate-400 text-xs mb-6">
-            {step === 1 
-              ? 'Enter your academic credentials to initiate login.' 
-              : 'Enter the 6-digit One-Time Password sent to your inbox.'}
+          <p className="text-sm text-slate-500 mb-7">
+            {step === 1 ? 'Enter your credentials to continue.' : 'Enter the 6-digit OTP sent to your email.'}
           </p>
 
-          {/* Messages */}
+          {/* Error */}
           {error && (
-            <div className="mb-4 p-3 rounded-lg bg-rose-950/20 border border-rose-900/30 text-rose-400 text-xs font-medium">
-              {error}
+            <div className="alert-error mb-5 text-xs">
+              <span className="leading-relaxed">{error}</span>
             </div>
           )}
-          {infoMessage && (
-            <div className="mb-4 p-3 rounded-lg bg-amber-950/20 border border-amber-900/30 text-amber-300 text-[11px] leading-relaxed">
-              {infoMessage}
+          {/* Info */}
+          {infoMessage && step === 2 && (
+            <div className="alert-info mb-5 text-xs">
+              <span>{infoMessage}</span>
             </div>
           )}
 
-          {/* Form Step 1: Credentials */}
+          {/* ── Step 1 ── */}
           {step === 1 && (
             <form onSubmit={handleCredentialsSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                  Gmail Address
-                </label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1.5">Email Address</label>
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                    <Mail className="h-5 w-5" />
-                  </span>
+                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-600 pointer-events-none" />
                   <input
-                    type="email"
-                    required
-                    placeholder="name@gmail.com"
+                    id="login-email"
+                    type="email" required autoFocus
+                    placeholder="you@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full glass-input pl-10"
+                    className="glass-input pl-10"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                  Password
-                </label>
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="text-xs font-semibold text-slate-400">Password</label>
+                  <Link to="/forgot-password" className="text-[11px] text-primary-400 hover:text-primary-300 transition-colors font-medium">
+                    Forgot password?
+                  </Link>
+                </div>
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                    <Lock className="h-5 w-5" />
-                  </span>
+                  <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-600 pointer-events-none" />
                   <input
-                    type="password"
-                    required
+                    id="login-password"
+                    type={showPass ? 'text' : 'password'} required
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full glass-input pl-10"
+                    className="glass-input pl-10 pr-10"
                   />
+                  <button type="button" onClick={() => setShowPass(!showPass)}
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-400 transition-colors">
+                    {showPass ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  </button>
                 </div>
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full glass-btn-primary flex items-center justify-center space-x-2 mt-2 disabled:opacity-50"
-              >
-                {loading ? (
-                  <span>Signing In...</span>
-                ) : (
-                  <>
-                    <span>Sign In</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </>
-                )}
+              <button type="submit" disabled={loading} className="glass-btn-primary w-full mt-2">
+                {loading ? 'Signing in…' : <><span>Continue</span><ArrowRight className="h-4 w-4" /></>}
               </button>
-              <div className="text-center">
-                <Link
-                  to="/forgot-password"
-                  className="text-xs text-slate-500 hover:text-primary-400 transition-colors"
-                >
-                  Forgot Password?
-                </Link>
-              </div>
             </form>
           )}
 
-          {/* Form Step 2: OTP Entry */}
+          {/* ── Step 2 ── */}
           {step === 2 && (
-            <form onSubmit={handleOTPSubmit} className="space-y-5">
+            <form onSubmit={handleOTPSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 text-center">
-                  Verification OTP Code
-                </label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1.5 text-center">One-Time Password</label>
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                    <ShieldCheck className="h-5 w-5" />
-                  </span>
+                  <ShieldCheck className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-600 pointer-events-none" />
                   <input
-                    type="text"
-                    required
-                    maxLength={6}
-                    placeholder="Enter 6-digit OTP"
+                    id="login-otp"
+                    type="text" required maxLength={6} autoFocus
+                    placeholder="000000"
                     value={otp}
-                    onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))} // only digits
-                    className="w-full glass-input pl-10 text-center text-lg tracking-widest font-bold"
+                    onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
+                    className="glass-input pl-10 text-center text-xl tracking-[0.4em] font-bold"
                   />
                 </div>
               </div>
 
-              <div className="flex space-x-3">
-                <button
-                  type="button"
-                  onClick={() => setStep(1)}
-                  disabled={loading}
-                  className="flex-1 glass-btn-secondary py-2 flex items-center justify-center space-x-1 text-xs"
-                >
-                  <ArrowLeft className="h-3.5 w-3.5" />
-                  <span>Back</span>
+              <div className="flex gap-3">
+                <button type="button" onClick={() => { setStep(1); setError(''); setOtp(''); }}
+                  disabled={loading} className="glass-btn-secondary flex-1">
+                  <ArrowLeft className="h-4 w-4" /><span>Back</span>
                 </button>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="flex-[2] glass-btn-primary py-2 flex items-center justify-center space-x-1 text-xs disabled:opacity-50"
-                >
-                  <span>Verify & Sign In</span>
+                <button type="submit" disabled={loading} className="glass-btn-primary flex-[2]">
+                  {loading ? 'Verifying…' : 'Verify & Sign in'}
                 </button>
               </div>
             </form>
           )}
 
           {/* Footer */}
-          <div className="border-t border-darkBorder/40 mt-6 pt-4 text-center">
-            <p className="text-xs text-slate-400">
-              New to AcadTrack?{' '}
-              <Link to="/signup" className="text-primary-400 hover:text-primary-300 font-semibold transition-colors">
-                Create Account
-              </Link>
-            </p>
-          </div>
+          <p className="text-center text-xs text-slate-600 mt-8">
+            Don't have an account?{' '}
+            <Link to="/signup" className="text-primary-400 hover:text-primary-300 font-semibold transition-colors">
+              Register
+            </Link>
+          </p>
         </div>
       </div>
     </div>

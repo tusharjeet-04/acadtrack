@@ -2,62 +2,204 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Custom font import fallback ───────────────────────────────────────────── */
 @layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
-    @apply bg-darkBg text-slate-100 min-h-screen antialiased;
-    background-image: 
-      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.07) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
-      radial-gradient(at 50% 100%, rgba(168, 85, 247, 0.03) 0px, transparent 50%);
+    @apply bg-darkBg text-slate-100 min-h-screen font-sans;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.08) 0px, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(99,102,241,0.05) 0px, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 50% 50%,  rgba(14,21,37,0.6) 0px, transparent 100%);
   }
 
-  /* Custom glassmorphism scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  /* ── Scrollbar ──────────────────────────────────────────────────────────── */
+  ::-webkit-scrollbar        { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track  { background: transparent; }
+  ::-webkit-scrollbar-thumb  {
+    @apply rounded-full;
+    background: rgba(99,102,241,0.2);
+    border: 1px solid rgba(99,102,241,0.1);
   }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-transparent;
+  ::-webkit-scrollbar-thumb:hover { background: rgba(99,102,241,0.35); }
+
+  /* ── Selection ─────────────────────────────────────────────────────────── */
+  ::selection {
+    background: rgba(99,102,241,0.3);
+    color: #e0e7ff;
   }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+
+  h1, h2, h3, h4, h5, h6 { @apply font-display font-semibold; }
+}
+
+/* ─── Component Classes ─────────────────────────────────────────────────────── */
+@layer components {
+
+  /* ── Cards / Panels ──────────────────────────────────────────────────────── */
+  .glass-panel {
+    @apply bg-darkCard border border-darkBorder rounded-2xl shadow-glass;
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.025) 0%, transparent 60%);
+  }
+
+  .glass-panel-elevated {
+    @apply glass-panel;
+    box-shadow: 0 8px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  /* ── Form Inputs ─────────────────────────────────────────────────────────── */
+  .glass-input {
+    @apply w-full bg-darkSurface border border-darkBorder rounded-xl px-4 py-2.5 text-slate-100 text-sm
+           placeholder-slate-600 transition-all duration-200 outline-none;
+    &:focus {
+      @apply border-primary-500/60 ring-2 ring-primary-500/15;
+      background-color: rgba(17,24,39,0.9);
+    }
+    &:hover:not(:focus) { @apply border-slate-600; }
+    color-scheme: dark;
+  }
+
+  select.glass-input {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234f46e5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+  select.glass-input option {
+    background-color: #0e1525;
+    color: #e2e8f0;
+    padding: 8px 12px;
+  }
+
+  /* ── Buttons ─────────────────────────────────────────────────────────────── */
+  .glass-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 font-semibold py-2.5 px-5 rounded-xl text-sm text-white
+           transition-all duration-200 select-none cursor-pointer outline-none;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    box-shadow: 0 4px 14px -4px rgba(79,70,229,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+    &:hover:not(:disabled) {
+      background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+      box-shadow: 0 6px 20px -4px rgba(79,70,229,0.65), inset 0 1px 0 rgba(255,255,255,0.12);
+      transform: translateY(-1px);
+    }
+    &:active:not(:disabled) { transform: translateY(0px) scale(0.99); }
+    &:disabled { opacity: 0.45; cursor: not-allowed; }
+  }
+
+  .glass-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 font-semibold py-2.5 px-5 rounded-xl text-sm text-slate-300
+           border border-darkBorder bg-darkSurface transition-all duration-200 select-none cursor-pointer outline-none;
+    &:hover:not(:disabled) {
+      @apply text-white border-slate-600 bg-slate-800/60;
+      box-shadow: 0 4px 14px -4px rgba(0,0,0,0.3);
+    }
+    &:active:not(:disabled) { transform: scale(0.99); }
+    &:disabled { opacity: 0.45; cursor: not-allowed; }
+  }
+
+  .glass-btn-danger {
+    @apply inline-flex items-center justify-center gap-2 font-semibold py-2.5 px-5 rounded-xl text-sm text-white
+           transition-all duration-200 select-none cursor-pointer outline-none;
+    background: linear-gradient(135deg, #be123c 0%, #f43f5e 100%);
+    box-shadow: 0 4px 14px -4px rgba(244,63,94,0.4);
+    &:hover:not(:disabled) { box-shadow: 0 6px 20px -4px rgba(244,63,94,0.55); transform: translateY(-1px); }
+    &:disabled { opacity: 0.45; cursor: not-allowed; }
+  }
+
+  /* ── Badge / Pill ────────────────────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide;
+  }
+  .badge-primary  { @apply badge bg-primary-950/60 text-primary-300 border border-primary-800/40; }
+  .badge-success  { @apply badge bg-emerald-950/60 text-emerald-400 border border-emerald-900/30; }
+  .badge-warning  { @apply badge bg-amber-950/60  text-amber-400  border border-amber-900/30; }
+  .badge-danger   { @apply badge bg-rose-950/60   text-rose-400   border border-rose-900/30; }
+  .badge-info     { @apply badge bg-sky-950/60    text-sky-400    border border-sky-900/30; }
+  .badge-neutral  { @apply badge bg-slate-900/60  text-slate-400  border border-slate-700/40; }
+
+  /* ── Table ───────────────────────────────────────────────────────────────── */
+  .pro-table {
+    @apply w-full text-sm border-collapse;
+  }
+  .pro-table thead tr {
+    @apply border-b border-darkBorder;
+  }
+  .pro-table thead th {
+    @apply py-3 px-4 text-left text-[10px] font-bold uppercase tracking-widest text-slate-500;
+  }
+  .pro-table tbody tr {
+    @apply border-b border-darkBorder/50 transition-colors;
+    &:hover { @apply bg-white/[0.02]; }
+    &:last-child { @apply border-b-0; }
+  }
+  .pro-table tbody td {
+    @apply py-3.5 px-4 text-slate-300;
+  }
+
+  /* ── Stat Card ───────────────────────────────────────────────────────────── */
+  .stat-card {
+    @apply glass-panel p-5 flex items-start gap-4 hover:border-primary-800/50 transition-all duration-300;
+    &:hover { box-shadow: 0 8px 32px -8px rgba(79,70,229,0.15), inset 0 1px 0 rgba(255,255,255,0.05); }
+  }
+  .stat-icon {
+    @apply p-3 rounded-xl flex-shrink-0 transition-transform duration-300;
+  }
+  .stat-card:hover .stat-icon { transform: scale(1.05); }
+
+  /* ── Section Header ──────────────────────────────────────────────────────── */
+  .section-header {
+    @apply flex items-center justify-between pb-3 mb-5 border-b border-darkBorder/60;
+  }
+  .section-title {
+    @apply text-base font-bold text-slate-100;
+  }
+  .section-subtitle {
+    @apply text-xs text-slate-500 mt-0.5;
+  }
+
+  /* ── Alert / Toast ───────────────────────────────────────────────────────── */
+  .alert {
+    @apply flex items-start gap-3 p-4 rounded-xl text-sm border;
+  }
+  .alert-error   { @apply alert bg-rose-950/20   border-rose-900/30   text-rose-400;   }
+  .alert-success { @apply alert bg-emerald-950/20 border-emerald-900/30 text-emerald-400; }
+  .alert-warning { @apply alert bg-amber-950/20  border-amber-900/30  text-amber-400; }
+  .alert-info    { @apply alert bg-sky-950/20    border-sky-900/30    text-sky-400;    }
+
+  /* ── Divider ─────────────────────────────────────────────────────────────── */
+  .divider {
+    @apply border-t border-darkBorder/50 my-4;
+  }
+
+  /* ── Loading shimmer ─────────────────────────────────────────────────────── */
+  .shimmer {
+    background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.04) 50%, transparent 75%);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
   }
 }
 
-/* Glassmorphism utility card styling */
-.glass-panel {
-  @apply bg-darkCard/60 backdrop-blur-md border border-darkBorder/60 rounded-xl shadow-xl shadow-black/10;
-}
-
-.glass-input {
-  @apply bg-slate-900/60 border border-darkBorder rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all;
-  color-scheme: dark;
-}
-
-/* Custom styled select dropdown — dark background, custom arrow */
-select.glass-input {
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 2.5rem;
-  cursor: pointer;
-  color-scheme: dark;
-}
-
-select.glass-input option {
-  background-color: #151c2c;
-  color: #e2e8f0;
-  padding: 8px 12px;
-}
-
-.glass-btn-primary {
-  @apply bg-primary-600 hover:bg-primary-500 text-white font-medium py-2.5 px-4 rounded-lg shadow-lg hover:shadow-primary-600/20 active:scale-95 transition-all;
-}
-
-.glass-btn-secondary {
-  @apply bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-slate-200 font-medium py-2.5 px-4 rounded-lg hover:text-white transition-all;
+/* ─── Utility Extras ────────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-white via-slate-200 to-primary-400 bg-clip-text text-transparent;
+  }
+  .text-gradient-indigo {
+    background: linear-gradient(135deg, #e0e7ff 0%, #818cf8 50%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-primary { box-shadow: 0 0 20px rgba(99,102,241,0.35); }
+  .border-glow  { border-color: rgba(99,102,241,0.5); }
+  .no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
 }
