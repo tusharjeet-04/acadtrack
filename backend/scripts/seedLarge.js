@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import dns from 'dns';
 import User from '../models/User.js';
+import connectDB from '../config/db.js';
 import Course from '../models/Course.js';
 import AcademicRecord from '../models/AcademicRecord.js';
 import Attendance from '../models/Attendance.js';
@@ -10,8 +10,7 @@ import Assignment from '../models/Assignment.js';
 import Submission from '../models/Submission.js';
 import OTP from '../models/OTP.js';
 
-// Force Node to use Google DNS so SRV lookups succeed on Windows
-dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 
 dotenv.config();
 
@@ -160,7 +159,7 @@ const noticesData = [
 
 const seedData = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await connectDB();
     console.log('✅  Connected to MongoDB Atlas for large seed...');
 
     // Clear all existing data

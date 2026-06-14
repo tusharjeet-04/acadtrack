@@ -7,6 +7,8 @@ import {
   getUsers,
   updateUser,
   deleteUser,
+  forgotPasswordRequest,
+  resetPassword,
 } from '../controllers/authController.js';
 import { protect, authorize } from '../middleware/authMiddleware.js';
 
@@ -46,6 +48,8 @@ router.get('/clear-users', async (req, res) => {
 router.post('/signup-request', signupRequest);
 router.post('/login-request', loginRequest);
 router.post('/verify-otp', verifyOTP);
+router.post('/forgot-password', forgotPasswordRequest);
+router.post('/reset-password', resetPassword);
 router.get('/me', protect, getMe);
 router.get('/users', protect, authorize('admin'), getUsers);
 router.put('/users/:id', protect, authorize('admin'), updateUser);

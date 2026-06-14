@@ -98,6 +98,31 @@ export const AuthProvider = ({ children }) => {
     return res;
   };
 
+  // ─── Forgot Password: send OTP to email ─────────────────────────────────────
+  const forgotPasswordRequest = async (email) => {
+    const res  = await fetch(`${API_BASE}/auth/forgot-password`, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'Failed to send OTP');
+    return data;
+  };
+
+  // ─── Reset Password: verify OTP & set new password ──────────────────────────
+  const resetPassword = async (email, otp, newPassword) => {
+    const res  = await fetch(`${API_BASE}/auth/reset-password`, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ email, otp, newPassword }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'Password reset failed');
+    return data;
+  };
+
+
   return (
     <AuthContext.Provider
       value={{
@@ -108,6 +133,8 @@ export const AuthProvider = ({ children }) => {
         loginRequest,
         signupRequest,
         verifyOTP,
+        forgotPasswordRequest,
+        resetPassword,
         logout,
         authFetch,
         API_BASE,

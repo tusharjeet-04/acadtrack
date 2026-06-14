@@ -277,3 +277,65 @@ export const deleteUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// @desc    Forgot password — Step 1: Send OTP to email
+// @route   POST /api/auth/forgot-password
+// @access  Public
+export const forgotPasswordRequest = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      // Return success even if not found to prevent email enumeration
+      return res.status(200).json({ message: 'If that email is registered, an OTP has been sent.' });
+    }
+
+    // Remove any existing reset OTP for this email
+    await OTP.deleteMany({ email, purpose: 'resetPassword' });
+
+    const otp = generateOTP();
+    await OTP.create({ email, otp, purpose: 'resetPassword' });
+
+    await sendOTPEmail(email, user.name, otp, 'resetPassword');
+
+    res.status(200).json({ message: 'A 6-digit OTP has been sent to your email.', email });
+  } catch (error) {
+    console.error('Forgot password error:', error);
+    res.status(500).json({ message: error.message || 'Server error' });
+  }
+};
+
+// @desc    Reset password — Step 2: Verify OTP & set new password
+// @route   POST /api/auth/reset-password
+// @access  Public
+export const resetPassword = async (req, res) => {
+  const { email, otp, newPassword } = req.body;
+  try {
+    if (!email || !otp || !newPassword) {
+      return res.status(400).json({ message: 'Email, OTP, and new password are required.' });
+    }
+    if (newPassword.length < 6) {
+      return res.status(400).json({ message: 'Password must be at least 6 characters.' });
+    }
+
+    const record = await OTP.findOne({ email, otp, purpose: 'resetPassword' });
+    if (!record) {
+      return res.status(400).json({ message: 'Invalid or expired OTP. Please try again.' });
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ message: 'User not found.' });
+
+    user.password = newPassword; // pre('save') hook will hash it
+    await user.save();
+
+    // Delete used OTP
+    await OTP.deleteMany({ email, purpose: 'resetPassword' });
+
+    res.status(200).json({ message: 'Password reset successfully. You can now log in.' });
+  } catch (error) {
+    console.error('Reset password error:', error);
+    res.status(500).json({ message: error.message || 'Server error' });
+  }
+};
+

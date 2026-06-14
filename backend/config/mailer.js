@@ -12,13 +12,19 @@ const sendOTPEmail = async (email, name, otp, purpose) => {
 
   const subject = purpose === 'signup' 
     ? 'Verify your registration - AcadTrack OTP' 
+    : purpose === 'resetPassword'
+    ? 'Reset your password - AcadTrack OTP'
     : 'Verify your login - AcadTrack OTP';
+
+  const purposeLabel = purpose === 'signup' ? 'account registration'
+    : purpose === 'resetPassword' ? 'password reset'
+    : 'login';
 
   const htmlContent = `
     <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;">
       <h2 style="color: #4f46e5; text-align: center; margin-bottom: 24px;">AcadTrack Verification Code</h2>
       <p style="font-size: 16px; color: #334155; line-height: 1.5;">Hello ${name || 'User'},</p>
-      <p style="font-size: 16px; color: #334155; line-height: 1.5;">You are requested to verify your action on AcadTrack. Please use the following 6-digit One-Time Password (OTP) to complete your ${purpose}:</p>
+      <p style="font-size: 16px; color: #334155; line-height: 1.5;">You are requested to verify your action on AcadTrack. Please use the following 6-digit One-Time Password (OTP) to complete your ${purposeLabel}:</p>
       <div style="text-align: center; margin: 32px 0;">
         <span style="font-size: 36px; font-weight: bold; letter-spacing: 6px; color: #4f46e5; background-color: #f5f3ff; padding: 12px 24px; border-radius: 8px; border: 1px solid #ddd6fe; display: inline-block;">${otp}</span>
       </div>
